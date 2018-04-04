@@ -49,7 +49,7 @@ export interface Item {
 
     id : string;
     thumbnail : string;
-    created : Date;
+    created : number;
     num_comments : number;
     author : string;
     score : number;
