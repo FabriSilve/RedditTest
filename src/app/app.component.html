@@ -2,7 +2,7 @@
 <div class="container">
     <div class="row">
         <div *ngFor="let item of items">
-            <span class="col-4">
+            <span class="col-sm-4">
                 <item [item]="item"></item>
             </span>
         </div>
@@ -10,10 +10,10 @@
 </div>
 <div class="container">
     <div class="row">
-        <div class="col-6 col-6-sm right">
+        <div class="col-xs-6 right">
             <a class="prev" (click)="preview()">< Prev</a>
         </div>
-        <div class="col-6 col-6-sm left">
+        <div class="col-xs-6 left">
             <a class="next" (click)="next()">Next ></a>
         </div>
     </div>

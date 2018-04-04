@@ -1,5 +1,5 @@
 <!-- todo set thumbnail in item bg -->
-<div class="container" (mouseenter)="mouseIn(item.id);" (mouseleave)="mouseOut(item.id);">
+<div (mouseenter)="mouseIn(item.id);" (mouseleave)="mouseOut(item.id);">
   <img #thumbnail [src]="item.thumbnail" alt="thumbnail" class="thumbnail">
   <div #titleThumbnail class="title-thumbnail">
     {{ item.title }}

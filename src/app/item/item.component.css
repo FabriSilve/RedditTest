@@ -2,6 +2,7 @@
     z-index: -1;
     width: 100%;
     height: auto;
+    max-height: 20%;
 }
 
 .item {
