@@ -21,4 +21,8 @@ export class ItemComponent implements OnInit {
     return new Date(ms*1000);
   }
 
+  public focus(id : string) {
+    console.log(id + " clicked");
+  }
+
 }

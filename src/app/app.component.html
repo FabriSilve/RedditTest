@@ -1,6 +1,21 @@
 
-<div *ngFor="let item of items">
-    <item [item]="item"></item>
+<div class="container">
+    <div class="row">
+        <div *ngFor="let item of items">
+            <span class="col-4">
+                <item [item]="item"></item>
+            </span>
+        </div>
+    </div>
+</div>
+<div class="container">
+    <div class="row">
+        <div class="col-6 col-6-sm right">
+            <a class="prev" (click)="preview()">< Prev</a>
+        </div>
+        <div class="col-6 col-6-sm left">
+            <a class="next" (click)="next()">Next ></a>
+        </div>
+    </div>
 </div>
 
-<button (click)="update()">update</button>

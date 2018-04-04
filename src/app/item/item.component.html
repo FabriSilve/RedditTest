@@ -1,10 +1,24 @@
-<p>
-  {{ item.thumbnail }}<br/>
-  {{ date | date:'mediumDate' }} <br/>
-  {{ item.num_comments }}<br/>
-  {{ item.author }}<br/>
-  {{ item.score }}<br/>
-  {{ item.permalink }}<br/>
-  {{ item.title }}<br/>
-  {{ item.selftext }}<br/>
-</p>
+<!-- todo set thumbnail in item bg -->
+<div class="container">
+  <div class="title-thumbnail">
+    {{ item.title }}
+  </div>
+  <div class="item" (click)="focus(item.id)">
+    <img (src)="item.thumbnail" alt="thumbnail" class="thumbnail">
+      <div class="score-label">
+        <i class="score">{{ item.score }}</i>
+      </div>
+      <div class="num_comments-label ">
+        <i class="num_comments">{{ item.num_comments }}</i>
+      </div>
+    <div class="selftext">
+      {{ item.selftext }}
+    </div>
+    <div class="comments">
+      comments list
+    </div>
+  </div>
+</div>
+<div class="sign">
+  Posted by <strong class="author">{{ item.author }}</strong> in <i class="created">{{ date | date:'mediumDate' }}</i>
+</div>
