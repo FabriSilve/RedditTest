@@ -25,4 +25,11 @@ export class ItemComponent implements OnInit {
     console.log(id + " clicked");
   }
 
+  public mouseIn(id : string) : any {
+    console.log("mouse in "+id);
+  }
+
+  public mouseOut(id : string) : any {
+    console.log("mouse out "+id);
+  }
 }
