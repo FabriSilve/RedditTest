@@ -1,16 +1,16 @@
 <!-- todo set thumbnail in item bg -->
 <div class="container">
+  <img [src]="item.thumbnail" alt="thumbnail" class="thumbnail">
   <div class="title-thumbnail">
     {{ item.title }}
   </div>
   <div class="item" (click)="focus(item.id)">
-    <img (src)="item.thumbnail" alt="thumbnail" class="thumbnail">
-      <div class="score-label">
-        <i class="score">{{ item.score }}</i>
-      </div>
-      <div class="num_comments-label ">
-        <i class="num_comments">{{ item.num_comments }}</i>
-      </div>
+    <div class="score-label">
+      <i class="score">{{ item.score }}</i>
+    </div>
+    <div class="num_comments-label ">
+      <i class="num_comments">{{ item.num_comments }}</i>
+    </div>
     <div class="selftext">
       {{ item.selftext }}
     </div>
