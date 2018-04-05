@@ -26,8 +26,8 @@
 
 <ul id="og-grid" class="og-grid">
   <li *ngFor="let item of items">
-    <div class="thumbnail">
-      <a >
+    <div [class.active]="currentId === item.id" class="thumbnail" (mouseenter)="mouseIn(item.id)" (mouseleave)="mouseOut(item.id)">
+      <a>
         <img [src]="item.thumbnail" [alt]="item.title" onError="this.src='assets/img/reddit.jpg'"/>
       </a>
     </div>

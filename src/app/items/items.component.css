@@ -218,6 +218,7 @@
     height: 250px;
     overflow: hidden;
     border: #8D94BA 7px solid;
+    transition: transform .2s;
   }
   .thumbnail img {
     position: absolute;
@@ -229,3 +230,9 @@
         -ms-transform: translate(-50%,-50%);
             transform: translate(-50%,-50%);
   }
+
+
+.active {
+    transform: scale(1.5);
+    z-index: 2;
+}

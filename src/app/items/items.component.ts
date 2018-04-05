@@ -10,7 +10,8 @@ export class ItemsComponent implements OnInit {
 
   @Input() public items : Item[];
   public date : Date;
-  public count : number = 2;
+
+  public currentId : string = "";
 
   constructor() { }
 
@@ -23,19 +24,15 @@ export class ItemsComponent implements OnInit {
     return new Date(ms*1000);
   }
 
-  public focus(id : string) {
-    console.log(id + " clicked");
-  }
 
   public mouseIn(id : string) : any {
     console.log("mouse in "+id);
+    this.currentId = id;
   }
 
   public mouseOut(id : string) : any {
     console.log("mouse out "+id);
+    this.currentId = "";
   }
 
-  public checkImg() : void {
-    console.log("ciao");
-  }
 }
