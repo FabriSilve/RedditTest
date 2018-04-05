@@ -13,6 +13,7 @@ export class AppComponent implements OnInit {
 
   private address : string = "https://www.reddit.com/r/sweden.json";
   public items : Item[];
+  public itemsInPage : number = 10;
   
   constructor(
     private dataService : DataService

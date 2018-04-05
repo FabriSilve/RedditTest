@@ -7,8 +7,16 @@
         </div>
     </div>
 </div>
-
-<items [items]="items"></items>
+<div class="row">
+    <div class="col-8-sm"></div>
+    <div class="col-3-sm right">
+        <i style="padding-right: 1em;">Items in page: </i>
+        <a class="PageNum" (click)="itemsInPage = 5"><strong> 5 </strong>-</a>
+        <a class="PageNum" (click)="itemsInPage = 10"><strong> 10 </strong>-</a>
+        <a class="PageNum" (click)="itemsInPage = 25"><strong> 25 </strong></a>
+    </div>
+</div>
+<items [items]="items.slice(0, itemsInPage)"></items>
 
 <div class="container">
     <div class="row">
@@ -20,4 +28,6 @@
         </div>
     </div>
 </div>
+
+<div #loading class="loading"></div>
 
