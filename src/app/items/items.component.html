@@ -27,7 +27,7 @@
 <ul id="og-grid" class="og-grid">
   <li *ngFor="let item of items">
     <div [class.active]="currentId === item.id" class="thumbnail" (mouseenter)="mouseIn(item.id)" (mouseleave)="mouseOut(item.id)">
-      <a>
+      <a [href]="'reddit.com/'+item.permalink+'.json'">
         <div [class.show]="currentId === item.id" class="thumbnail-title">
           <h4>{{item.title}}</h4>
         </div>

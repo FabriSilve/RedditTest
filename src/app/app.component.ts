@@ -25,9 +25,9 @@ export class AppComponent implements OnInit {
     );
   }
 
-  public update() : void {
-    console.log("app update");
-    this.dataService.getData(this.address).subscribe(
+  public update(n : number) : void {
+    this.itemsInPage = n;
+    this.dataService.getData(this.address+"?limit="+(n-1)).subscribe(
       result => this.items = this.dataService.buildData(result)
     );
   }
