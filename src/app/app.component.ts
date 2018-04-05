@@ -14,6 +14,7 @@ export class AppComponent implements OnInit {
   private address : string = "https://www.reddit.com/r/sweden.json";
   public items : Item[];
   public itemsInPage : number = 10;
+  public loaded : boolean = false;
   
   constructor(
     private dataService : DataService
@@ -21,14 +22,21 @@ export class AppComponent implements OnInit {
 
   ngOnInit() {
     this.dataService.getData(this.address).subscribe(
-      result => this.items = this.dataService.buildData(result)
+      result => {
+        this.items = this.dataService.buildData(result);
+        this.loaded = true;
+      }
     );
   }
 
   public update(n : number) : void {
     this.itemsInPage = n;
+    this.loaded = false;
     this.dataService.getData(this.address+"?limit="+(n-1)).subscribe(
-      result => this.items = this.dataService.buildData(result)
+      result => {
+        this.items = this.dataService.buildData(result);
+        this.loaded = true;
+      }
     );
   }
 
