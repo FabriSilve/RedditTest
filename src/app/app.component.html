@@ -1,19 +1,21 @@
-
 <div class="container">
-    <div class="row">
-        <div *ngFor="let item of items">
-            <span class="col-sm-4">
-                <item [item]="item"></item>
-            </span>
+    <div clas="row">
+        <div class="col-4-sm"></div>
+        <div class="col-4-sm center">
+            <h1>TITLE</h1>
+            <h2>name</h2>
         </div>
     </div>
 </div>
+
+<items [items]="items"></items>
+
 <div class="container">
     <div class="row">
-        <div class="col-xs-6 right">
+        <div class="col-6-sm right">
             <a class="prev" (click)="preview()">< Prev</a>
         </div>
-        <div class="col-xs-6 left">
+        <div class="col-6-sm left">
             <a class="next" (click)="next()">Next ></a>
         </div>
     </div>

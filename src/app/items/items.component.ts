@@ -2,19 +2,21 @@ import { Component, OnInit, Input } from '@angular/core';
 import { Item } from '../model/item';
 
 @Component({
-  selector: 'item',
-  templateUrl: './item.component.html',
-  styleUrls: ['./item.component.css']
+  selector: 'items',
+  templateUrl: './items.component.html',
+  styleUrls: ['./items.component.css']
 })
-export class ItemComponent implements OnInit {
+export class ItemsComponent implements OnInit {
 
-  @Input() public item : Item;
+  @Input() public items : Item[];
   public date : Date;
+  public count : number = 2;
 
   constructor() { }
 
   ngOnInit() {
-    this.date =  this.dateConverter(this.item.created);
+    //this.date =  this.dateConverter(this.item.created);
+    
   }
 
   public dateConverter(ms : number) : Date {

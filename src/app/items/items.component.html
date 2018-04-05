@@ -1,5 +1,5 @@
 <!-- todo set thumbnail in item bg -->
-<div (mouseenter)="mouseIn(item.id);" (mouseleave)="mouseOut(item.id);">
+<!--<div (mouseenter)="mouseIn(item.id);" (mouseleave)="mouseOut(item.id);">
   <img #thumbnail [src]="item.thumbnail" alt="thumbnail" class="thumbnail">
   <div #titleThumbnail class="title-thumbnail">
     {{ item.title }}
@@ -21,4 +21,15 @@
 </div>
 <div class="sign">
   Posted by <strong class="author">{{ item.author }}</strong> in <i class="created">{{ date | date:'mediumDate' }}</i>
-</div>
+</div>-->
+
+
+<ul id="og-grid" class="og-grid">
+  <li *ngFor="let item of items">
+    <div class="thumbnail">
+      <a >
+        <img [src]="item.thumbnail" [alt]="item.title"/>
+      </a>
+    </div>
+  </li>
+</ul>

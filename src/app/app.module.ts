@@ -5,7 +5,7 @@ import { HttpClientModule } from '@angular/common/http';
 
 
 import { AppComponent } from './app.component';
-import { ItemComponent } from './item/item.component';
+import { ItemsComponent } from './items/items.component';
 import { DataService } from './service/data.service';
 
 
@@ -13,7 +13,7 @@ import { DataService } from './service/data.service';
 @NgModule({
   declarations: [
     AppComponent,
-    ItemComponent
+    ItemsComponent
   ],
   imports: [
     BrowserModule,
