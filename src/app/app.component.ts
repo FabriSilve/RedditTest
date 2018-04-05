@@ -11,7 +11,7 @@ import { Item } from './model/item';
 })
 export class AppComponent implements OnInit {
 
-  private address : string = "https://www.reddit.com/r/italian.json";
+  private address : string = "https://www.reddit.com/r/sweden.json";
   public items : Item[];
   
   constructor(

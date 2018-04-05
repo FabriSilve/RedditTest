@@ -34,4 +34,8 @@ export class ItemsComponent implements OnInit {
   public mouseOut(id : string) : any {
     console.log("mouse out "+id);
   }
+
+  public checkImg() : void {
+    console.log("ciao");
+  }
 }

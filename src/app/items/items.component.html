@@ -28,7 +28,7 @@
   <li *ngFor="let item of items">
     <div class="thumbnail">
       <a >
-        <img [src]="item.thumbnail" [alt]="item.title"/>
+        <img [src]="item.thumbnail" [alt]="item.title" onError="this.src='assets/img/reddit.jpg'"/>
       </a>
     </div>
   </li>
