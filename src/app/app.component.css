@@ -1,3 +1,7 @@
 .PageNum:hover {
     cursor: pointer;
 }
+
+.underline {
+    text-decoration: underline;
+}
