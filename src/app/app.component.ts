@@ -30,5 +30,12 @@ export class AppComponent implements OnInit {
       result => this.items = this.dataService.buildData(result)
     );
   }
+
+  public next() {
+    console.log("next click");
+  }
   
+  public preview() {
+    console.log("prev click");
+  }
 }

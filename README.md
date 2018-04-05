@@ -1,27 +1,48 @@
-# Bannerflow
+Your task is to create a feed displaying the entries from a sub reddit JSON feed. There should be
+10 entries per page (limit) and there should also be paging functionality showing ‘Next’ and
+‘Previous’ links in the interface to navigate between pages.
+Each entry should contain the following:
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.7.3.
+    thumbnail
+    created (as readable date)
+    num_comments
+    author
+    score
+    permalink (as a link)
+    title
 
-## Development server
+The user should be able to click on an entry to see only that entry, and be able to read the
+entries text (selftext).
+Bonus:
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+    Allow user to change what sub reddit the items are fetched from
+    Allow user to toggle between 5, 10 or 25 entries. When changing this, the data will be
+    refetched from reddit.
+    Allow users to read the comments on an entry. To find the comments for an entry, enter an
+    entry and add ".json" to the url.
+    (e.g. https://www.reddit.com/r/space/comments/4ck9oe/launch_of_sts129_atlantis_circa_2009
+    .json)
 
-## Code scaffolding
+Super bonus:
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+    Present the comments in threaded structure like it is done on the reddit page. See an example
+    here:
+    https://www.reddit.com/r/sweden/comments/756nsu/matlagningsm%C3%A5ndag_cooking_mo
+    nday_09_october_2017/
 
-## Build
+Tech info
+Use any javascript framework.
+You can fetch entry JSON feed from any sub reddit using this url:
+https://www.reddit.com/r/{ SUBREDDIT_NAME }.json
+ex. https://www.reddit.com/r/sweden.json
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `-prod` flag for a production build.
+Parameters this url supports are:
 
-## Running unit tests
+limit = (number) Number of entries to fetch (default: 25)
+before = (entry id) Show entries before an entry id. (ex before: ”t3_758x8e”)
+after = (entry id) Show entries after an entry id. (ex after: ”t3_758x8e”)
+ex. https://www.reddit.com/r/sweden.json?limit=25&after=t3_758x8e
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+There are properties, (after and before) in the JSON response containing entry ids which can be
+used for pagination. How you do this is part of the test.
+All words marked in bold above are fields that exists in the JSON feed.
