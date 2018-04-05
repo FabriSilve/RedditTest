@@ -28,8 +28,17 @@
   <li *ngFor="let item of items">
     <div [class.active]="currentId === item.id" class="thumbnail" (mouseenter)="mouseIn(item.id)" (mouseleave)="mouseOut(item.id)">
       <a>
+        <div [class.show]="currentId === item.id" class="thumbnail-title">
+          <h4>{{item.title}}</h4>
+        </div>
         <img [src]="item.thumbnail" [alt]="item.title" onError="this.src='assets/img/reddit.jpg'"/>
+
+        <div class="sign">
+          Posted by <strong class="author">{{ item.author }}</strong> in <i class="created">{{ dateConverter(item.created) | date:'mediumDate' }}</i>
+        </div>
       </a>
     </div>
   </li>
 </ul>
+
+<!--<div class="fog" [class.hidden]="!fog">.</div>-->
