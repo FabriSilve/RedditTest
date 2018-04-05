@@ -32,10 +32,21 @@
           <h4>{{item.title}}</h4>
         </div>
         <img [src]="item.thumbnail" [alt]="item.title" onError="this.src='assets/img/reddit.jpg'"/>
-
-        <div class="sign">
-          Posted by <strong class="author">{{ item.author }}</strong> in <i class="created">{{ dateConverter(item.created) | date:'mediumDate' }}</i>
-        </div>
+        <div class="thumbnail-footer">
+          <div class="values">
+            <div class="row">
+              <span class="col-6-sm left">
+                <!--&#9733; <!--&#10025;--><i class="fas fa-trophy"></i> {{item.score}} 
+              </span>
+              <div class="col-6-sm right">
+                {{item.num_comments}} <i class="fas fa-comments"></i><!--&#10080;  -->      
+              </div>
+            </div>
+          </div>
+          <div class="sign">
+            Posted by <strong class="author">{{ item.author }}</strong> in <i class="created">{{ dateConverter(item.created) | date:'mediumDate' }}</i>
+          </div>
+        </div> 
       </a>
     </div>
   </li>
