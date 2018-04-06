@@ -56,12 +56,12 @@
       height: 30px;
   }
 
-
-.active {
+  .thumbnail:hover {
     transform: scale(1.5);
     z-index: 5;
     box-shadow: 0 0 #888888;
-}
+  }
+
 
 .thumbnail-title{
     position: absolute;

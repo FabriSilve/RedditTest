@@ -21,17 +21,16 @@ export class AppComponent implements OnInit {
   ) {}
 
   ngOnInit() {
-    this.dataService.getData(this.address).subscribe(
-      result => {
-        this.items = this.dataService.buildData(result);
-        this.loaded = true;
-      }
-    );
+    this.requestData(this.itemsInPage);
   }
 
   public update(n : number) : void {
     this.itemsInPage = n;
     this.loaded = false;
+    this.requestData(n);
+  }
+
+  private requestData(n : number) : void {
     this.dataService.getData(this.address+"?limit="+(n-1)).subscribe(
       result => {
         this.items = this.dataService.buildData(result);
