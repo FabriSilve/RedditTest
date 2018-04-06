@@ -11,10 +11,14 @@ import { Item } from './model/item';
 })
 export class AppComponent implements OnInit {
 
-  private address : string = "https://www.reddit.com/r/sweden.json";
+  
   public items : Item[];
   public itemsInPage : number = 10;
   public loaded : boolean = false;
+
+  public searchInput : string = "sweden";
+
+  //private address : string = "https://www.reddit.com/r/"+this.searchInput+".json";
   
   constructor(
     private dataService : DataService
@@ -31,7 +35,7 @@ export class AppComponent implements OnInit {
   }
 
   private requestData(n : number) : void {
-    this.dataService.getData(this.address+"?limit="+(n-1)).subscribe(
+    this.dataService.getData(this.addressBuilder(this.searchInput)+"?limit="+(n-1)).subscribe(
       result => {
         this.items = this.dataService.buildData(result);
         this.loaded = true;
@@ -47,7 +51,12 @@ export class AppComponent implements OnInit {
     console.log("prev click");
   }
 
-  public search(event: any) {
-    console.log(event.target.value);
+  public search() {
+    console.log(this.searchInput);
+    this.requestData(this.itemsInPage);
+  }
+
+  private addressBuilder(s : string) : string {
+    return "https://www.reddit.com/r/"+s+".json";
   }
 }
