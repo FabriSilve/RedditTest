@@ -8,6 +8,7 @@ import { AppComponent } from './app.component';
 import { ItemsComponent } from './items/items.component';
 import { DataService } from './service/data.service';
 import { ItemComponent } from './items/item/item.component';
+import { HeaderComponent } from './header/header.component';
 
 
 
@@ -15,7 +16,8 @@ import { ItemComponent } from './items/item/item.component';
   declarations: [
     AppComponent,
     ItemsComponent,
-    ItemComponent
+    ItemComponent,
+    HeaderComponent
   ],
   imports: [
     BrowserModule,
