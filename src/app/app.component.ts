@@ -13,10 +13,10 @@ export class AppComponent implements OnInit {
 
   
   public items : Item[];
-  public itemsInPage : number = 10;
   public loaded : boolean = false;
 
-  private searchInput : string = "";
+  private searchInput : string = "sweden";
+  private itemsInPage : number = 10;
   
   constructor(
     private dataService : DataService
@@ -51,6 +51,11 @@ export class AppComponent implements OnInit {
 
   public onSearch(s : string) {
     this.searchInput = s;
+    this.requestData(this.itemsInPage);
+  }
+
+  public onNumPage(n : number) {
+    this.itemsInPage = n;
     this.requestData(this.itemsInPage);
   }
 
