@@ -34,11 +34,17 @@
     display:none;
 }
 
-  #body {
+#body {
     position: absolute;
     top: 100%;
     width:100%;
     height: auto;
-    background: url('assets/img/section-bg.jpg');
-    background-size: cover;
-  }
+    background: url('assets/img/section-bg2.jpg');
+    background-repeat: repeat;
+    background-attachment: scroll;
+    background-position: top left;
+    /*-webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;*/
+    background-size: auto;
+}
