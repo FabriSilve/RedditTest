@@ -1,8 +1,16 @@
 <div id="input-bar" class="container">
     <div clas="row">
         <div class="col-sm-6 center">
-            <span class="icon"><i class="fa fa-search"></i></span>
-            <input type="search" id="search" placeholder="Search by title..." />
+            <div class="row">
+                <div class="col-xs-8">
+                    <input (keyup)="search($event)" type="text" id="search-bar" placeholder="Search by title...">
+                    <a ><i class="search-icon fa fa-search"></i></a>
+                </div>
+                <div class="col-xs-4">
+                    <a><i class="fa fa-trophy bar-icon"></i></a>
+                    <a><i class="fa fa-comments bar-icon"></i></a>
+                </div>
+            </div>
         </div>
         <div class="col-sm-6 right">
             <i style="padding-right: 1em;">Items in page: </i>

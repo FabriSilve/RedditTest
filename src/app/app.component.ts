@@ -46,4 +46,8 @@ export class AppComponent implements OnInit {
   public preview() {
     console.log("prev click");
   }
+
+  public search(event: any) {
+    console.log(event.target.value);
+  }
 }
