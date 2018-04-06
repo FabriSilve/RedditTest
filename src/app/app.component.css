@@ -43,8 +43,5 @@
     background-repeat: repeat;
     background-attachment: scroll;
     background-position: top left;
-    /*-webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;*/
     background-size: auto;
 }

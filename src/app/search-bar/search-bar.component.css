@@ -6,8 +6,8 @@
     vertical-align: middle;
     margin-left: 1%;
     margin-right: 1%;
-    background: rgba(255, 255, 255, 0.8);
-    padding: 15px;
+    background: rgba(255, 255, 255, 0.9);
+    padding: 15px 5px 5px 5px;
     box-shadow: 10px 10px rgba(186, 186, 186, 0.8);
 }
 
@@ -38,7 +38,7 @@ input#search-bar{
 }
 
 .bar-icon {
-    margin-top: 5%;
+    margin-top: 7%;
     margin-right: 5%;
     font-size: 120%;
     text-decoration: none;
@@ -65,5 +65,15 @@ input#search-bar{
 .underline {
     border-radius: 50%;
     border: solid 2px rgb(139, 155, 247);
+}
 
+.page-container {
+    width:100%;
+    font-size: 80%;
+    position: absolute;
+    text-align: right;
+    margin-top: 2em;
+    margin-bottom: -10%;
+    margin-right: 10%;
+    padding-right: 1em;
 }
