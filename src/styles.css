@@ -34,6 +34,8 @@ body {
   top: 100%;
   width:100%;
   height: auto;
+  background: url(assets/img/section-bg.jpg);
+  background-size: cover;
 }
 
 #reddit-alien {
