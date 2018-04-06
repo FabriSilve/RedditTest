@@ -26,8 +26,8 @@
 
 <ul id="og-grid" class="og-grid">
   <li *ngFor="let item of items">
-    <div [class.active]="currentId === item.id" class="thumbnail" (mouseenter)="mouseIn(item.id)" (mouseleave)="mouseOut(item.id)">
-      <a [href]="'reddit.com/'+item.permalink+'.json'">
+    <div [class.active]="currentId === item.id" class="thumbnail" (mouseenter)="mouseIn(item.id)" (mouseleave)="mouseOut(item.id)" (click)="focusItem(item.id)">
+      <a>
         <div [class.show]="currentId === item.id" class="thumbnail-title">
           <h4>{{item.title}}</h4>
         </div>
@@ -52,4 +52,8 @@
   </li>
 </ul>
 
-<!--<div class="fog" [class.hidden]="!fog">.</div>-->
+<div *ngFor="let item of items">
+  <item [hidden]="item.id != focusId" [item]="item"></item>
+</div>
+
+<div class="fog" [class.hidden]="!fog"></div>

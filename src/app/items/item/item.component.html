@@ -1,0 +1,36 @@
+<div class="full">
+  <div class="container focused">
+    <div class="row">
+      <div class="col-6">
+        <div class="photo">
+          <h4>{{item.title}}</h4>
+          <img class="image" [src]="item.thumbnail" [alt]="item.title" onError="this.src='assets/img/reddit.jpg'"/>
+        </div>
+      </div>
+      <div class="col-6">
+        <div class="data">
+          <div class="selftext">
+            <p>{{item.selftext}}</p>
+            <div class="values">
+              <div class="row">
+                <span class="col-6-sm left">
+                  <!--&#9733; <!--&#10025;--><i class="fas fa-trophy"></i> {{item.score}} 
+                </span>
+                <div class="col-6-sm right">
+                  {{item.num_comments}} <i class="fas fa-comments"></i><!--&#10080;  -->      
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="comments">
+            <ul class="commentList">
+              <li *ngFor="let comment of comments">
+                ciao
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

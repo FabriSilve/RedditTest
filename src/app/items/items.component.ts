@@ -9,16 +9,13 @@ import { Item } from '../model/item';
 export class ItemsComponent implements OnInit {
 
   @Input() public items : Item[];
-  public date : Date;
 
   public currentId : string = "";
+  public focusId : string = "";
 
   constructor() { }
 
-  ngOnInit() {
-    //this.date =  this.dateConverter(this.item.created);
-    
-  }
+  ngOnInit() { }
 
   public dateConverter(ms : number) : Date {
     return new Date(ms*1000);
@@ -31,6 +28,10 @@ export class ItemsComponent implements OnInit {
 
   public mouseOut(id : string) : any {
     this.currentId = "";
+  }
+
+  public focusItem(id : string) {
+    this.focusId = id;
   }
 
 }

@@ -94,7 +94,7 @@ p {
 /* ==== GRID SYSTEM ==== */
 
 .container {
-  width: 90%;
+  width: 95%;
   margin-left: auto;
   margin-right: auto;
 }
@@ -185,7 +185,7 @@ p {
 
 @media only screen and (min-width: 33.75em) {  /* 540px */
   .container {
-    width: 80%;
+    width: 85%;
   }
 }
 
@@ -245,7 +245,7 @@ p {
 
 @media only screen and (min-width: 60em) { /* 960px */
   .container {
-    width: 75%;
+    width: 80%;
     max-width: 60rem;
   }
 }
