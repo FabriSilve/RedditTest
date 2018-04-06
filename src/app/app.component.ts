@@ -16,9 +16,7 @@ export class AppComponent implements OnInit {
   public itemsInPage : number = 10;
   public loaded : boolean = false;
 
-  public searchInput : string = "sweden";
-
-  //private address : string = "https://www.reddit.com/r/"+this.searchInput+".json";
+  private searchInput : string = "";
   
   constructor(
     private dataService : DataService
@@ -51,8 +49,8 @@ export class AppComponent implements OnInit {
     console.log("prev click");
   }
 
-  public search() {
-    console.log(this.searchInput);
+  public onSearch(s : string) {
+    this.searchInput = s;
     this.requestData(this.itemsInPage);
   }
 

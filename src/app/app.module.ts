@@ -9,6 +9,7 @@ import { ItemsComponent } from './items/items.component';
 import { DataService } from './service/data.service';
 import { ItemComponent } from './items/item/item.component';
 import { HeaderComponent } from './header/header.component';
+import { SearchBarComponent } from './search-bar/search-bar.component';
 
 
 
@@ -17,7 +18,8 @@ import { HeaderComponent } from './header/header.component';
     AppComponent,
     ItemsComponent,
     ItemComponent,
-    HeaderComponent
+    HeaderComponent,
+    SearchBarComponent
   ],
   imports: [
     BrowserModule,

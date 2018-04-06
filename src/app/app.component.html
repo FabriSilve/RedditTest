@@ -4,7 +4,9 @@
 
 
  <section id="body">
-    <div id="input-bar" class="container">
+
+    <search-bar (search)="onSearch($event)"></search-bar>
+    <!--<div id="input-bar" class="container">
         <div clas="row">
             <div class="col-sm-6 center">
                 <div class="row">
@@ -25,7 +27,8 @@
                 <a class="pageNum" [class.underline]="itemsInPage === 25" (click)="update(25)"><strong> 25 </strong></a>
             </div>
         </div>
-    </div>
+    </div>-->
+
     <items [items]="items"></items>
     
     <div class="container">
