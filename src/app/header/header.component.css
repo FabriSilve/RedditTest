@@ -1,9 +1,9 @@
 #header {
     position: absolute;
-    /*height: 100%;
-    width: 100%;*/
-    min-width: 100%;
-    min-height: 100%;
+    height: 100%;
+    width: 100%;
+    /*min-width: 100%;
+    min-height: 100%;*/
     background: url('assets/img/polaroid-bg.jpg');
     background-repeat: no-repeat;
     background-attachment: scroll;
