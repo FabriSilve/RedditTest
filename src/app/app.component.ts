@@ -54,6 +54,7 @@ export class AppComponent implements OnInit {
     if(this.items.length > 0)
       lastId = this.items[this.items.length-1].id;
     this.requestData(this.itemsInPage, undefined, lastId);
+    this.onMove(true);
   }
   
   public preview() {
@@ -61,6 +62,7 @@ export class AppComponent implements OnInit {
     if(this.items.length > 0)
       firstId = this.items[0].id;
     this.requestData(this.itemsInPage, firstId, undefined);
+    this.onMove(true);
   }
 
   public onSearch(s : string) {

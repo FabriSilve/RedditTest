@@ -159,6 +159,10 @@
     /* width: inherit;*/ 
  }
 
+ /*.polaroid-images {
+     margin-top: 1em;
+ }*/
+
 .polaroid-images li:nth-child(1n)
 {
     -webkit-transform: rotate(4deg);  
@@ -187,7 +191,6 @@
     -webkit-transform: scale(1.2); 
     -moz-transform: scale(1.2);
         transform: scale(1.2);
-    z-index:50;
     -webkit-box-shadow: 0 10px 20px rgba(0, 0, 0, .7);
     -moz-box-shadow: 0 10px 20px rgba(0,0,0,.7);
         box-shadow: 0 10px 20px rgba(0,0,0,.7);
@@ -197,4 +200,5 @@
     -webkit-transform: rotate(0deg); 
     -moz-transform: rotate(0deg);
         transform: rotate(0deg);
+    z-index: 50px;
 }

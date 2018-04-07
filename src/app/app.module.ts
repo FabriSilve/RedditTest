@@ -11,6 +11,7 @@ import { ItemComponent } from './items/item/item.component';
 import { HeaderComponent } from './header/header.component';
 import { SearchBarComponent } from './search-bar/search-bar.component';
 import { NoResultComponent } from './no-result/no-result.component';
+import { FooterComponent } from './footer/footer.component';
 
 
 
@@ -21,7 +22,8 @@ import { NoResultComponent } from './no-result/no-result.component';
     ItemComponent,
     HeaderComponent,
     SearchBarComponent,
-    NoResultComponent
+    NoResultComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,

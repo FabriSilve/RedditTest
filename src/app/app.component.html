@@ -16,16 +16,18 @@
     
     <div class="container">
         <div class="row">
-            <div class="col-6-sm right">
-                <a class="prev" (click)="preview()">< Prev</a>
+            <div class="col-xs-3 col-xs-offset-2 col-sm-1 col-sm-offset-3 move-btn prew">
+                <a (click)="preview()">< Prev</a>
             </div>
-            <div class="col-6-sm left">
-                <a class="next" (click)="next()">Next ></a>
+            <div class="col-xs-3 col-xs-offset-2 col-sm-1 col-sm-offset-3 move-btn next">
+                <a (click)="next()">Next ></a>
             </div>
         </div>
     </div>
     
  </section>
+
+ <footer></footer>
 
 
 <div class="fog" [class.hidden]="loaded">

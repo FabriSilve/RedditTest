@@ -1,80 +1,31 @@
-<!-- todo set thumbnail in item bg -->
-<!--<div (mouseenter)="mouseIn(item.id);" (mouseleave)="mouseOut(item.id);">
-  <img #thumbnail [src]="item.thumbnail" alt="thumbnail" class="thumbnail">
-  <div #titleThumbnail class="title-thumbnail">
-    {{ item.title }}
-  </div>
-  <div class="item" (click)="focus(item.id)">
-    <div class="score-label">
-      <i class="score">{{ item.score }}</i>
-    </div>
-    <div class="num_comments-label ">
-      <i class="num_comments">{{ item.num_comments }}</i>
-    </div>
-    <div class="selftext">
-      {{ item.selftext }}
-    </div>
-    <div class="comments">
-      comments list
-    </div>
-  </div>
-</div>
-<div class="sign">
-  Posted by <strong class="author">{{ item.author }}</strong> in <i class="created">{{ date | date:'mediumDate' }}</i>
-</div>-->
 
 <no-result *ngIf="items?.length === 0"></no-result>
 
-
-<ul id="og-grid" class="og-grid polaroid-images">
-  <li *ngFor="let item of items">
-    <div class="polaroid-image" (click)="focusItem(item.id)">
-        <a>
-          <img class="thumbnail-image" [src]="item.thumbnail" [alt]="item.title" [title]="item.title" onError="this.src='assets/img/reddit.jpg'"/>
-          <div class="footer">
-            <h4>
-              {{ (item.title.length>42)? ((item.title | slice:0:42)+'...'):(item.title) }}
-            </h4>
-            <div class="sign">
-              <strong class="author">{{ item.author }}</strong> in <i class="created">{{ dateConverter(item.created) | date:'mediumDate' }}</i>
-            </div>
-            <div class="values left">
-              <i class="fas fa-trophy"></i> {{item.score}}
-              <i class="tab"></i><i class="fas fa-comments"></i>{{item.num_comments}}    
-            </div>
-          </div>
-        </a>
-    </div>
-    <!--
-    <div class="thumbnail" (mouseenter)="mouseIn(item.id)" (mouseleave)="mouseOut(item.id)" (click)="focusItem(item.id)">
-      <a>
-        <div [class.show]="currentId === item.id" class="thumbnail-title">
-          <h4>{{item.title}}</h4>
-        </div>
-        <img [src]="item.thumbnail" [alt]="item.title" onError="this.src='assets/img/reddit.jpg'"/>
-        <div class="thumbnail-footer">
-          <div class="values">
-            <div class="row">
-              <span class="col-6-sm left">
-                <i class="fas fa-trophy"></i> {{item.score}} 
-              </span>
-              <div class="col-6-sm right">
-                {{item.num_comments}} <i class="fas fa-comments"></i>    
+<div class="container">
+  <ul id="og-grid" class="og-grid polaroid-images">
+    <li *ngFor="let item of items">
+      <div class="polaroid-image" (click)="focusItem(item.id)">
+          <a>
+            <img class="thumbnail-image" [src]="item.thumbnail" [alt]="item.title" [title]="item.title" onError="this.src='assets/img/reddit.jpg'"/>
+            <div class="footer">
+              <h4>
+                {{ (item.title.length>42)? ((item.title | slice:0:42)+'...'):(item.title) }}
+              </h4>
+              <div class="sign">
+                <strong class="author">{{ item.author }}</strong> in <i class="created">{{ dateConverter(item.created) | date:'mediumDate' }}</i>
+              </div>
+              <div class="values left">
+                <i class="fas fa-trophy"></i> {{item.score}}
+                <i class="tab"></i><i class="fas fa-comments"></i>{{item.num_comments}}    
               </div>
             </div>
-          </div>
-          <div class="sign">
-            Posted by <strong class="author">{{ item.author }}</strong> in <i class="created">{{ dateConverter(item.created) | date:'mediumDate' }}</i>
-          </div>
-        </div> 
-      </a>
-    </div>
-  -->
-  </li>
-</ul>
+          </a>
+      </div>
+    </li>
+  </ul>
+</div>
 
 <div *ngFor="let item of items">
   <item [hidden]="item.id != focusId" [item]="item"></item>
 </div>
 
-<!--<div class="fog" [class.hidden]="!fog"></div>-->
