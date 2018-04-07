@@ -16,7 +16,7 @@ export class AppComponent implements OnInit {
   public items : Item[] = [];
   public loaded : boolean = false;
 
-  private searchInput : string = "sweden";
+  private searchInput : string = "";
   private itemsInPage : number = 10;
   
   constructor(
@@ -88,6 +88,7 @@ export class AppComponent implements OnInit {
   }
 
   private addressBuilder(s : string) : string {
+    if(s === "") s = "sweden";
     return "https://www.reddit.com/r/"+s+".json";
   }
 }
