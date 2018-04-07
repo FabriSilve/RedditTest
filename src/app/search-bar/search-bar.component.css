@@ -68,12 +68,9 @@ input#search-bar{
 }
 
 .page-container {
+    padding-top: 10px;
     width:100%;
     font-size: 80%;
-    position: absolute;
     text-align: right;
-    margin-top: 2em;
-    margin-bottom: -10%;
-    margin-right: 10%;
-    padding-right: 1em;
 }
+

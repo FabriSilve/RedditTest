@@ -34,7 +34,7 @@ export class AppComponent implements OnInit {
   }
 
   private requestData(n : number) : void {
-    this.dataService.getData(this.addressBuilder(this.searchInput)+"?limit="+(n-1)).subscribe(
+    this.dataService.getData(this.addressBuilder(this.searchInput)+"?limit="+(n)).subscribe(
       result => {
         if(result != null) this.items = this.dataService.buildData(result);
         else this.items = [];
