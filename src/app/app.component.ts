@@ -13,7 +13,7 @@ export class AppComponent implements OnInit {
 
   @ViewChild('body') public body : ElementRef;
   
-  public items : Item[];
+  public items : Item[] = [];
   public loaded : boolean = false;
 
   private searchInput : string = "sweden";
@@ -33,22 +33,34 @@ export class AppComponent implements OnInit {
     this.requestData(n);
   }
 
-  private requestData(n : number) : void {
-    this.dataService.getData(this.addressBuilder(this.searchInput)+"?limit="+(n)).subscribe(
+  private requestData(n : number, idPrev? : string, idNext? : string ) : void {
+    var address : string = this.addressBuilder(this.searchInput)+"?limit="+n;
+    if(idPrev) {
+      address += "&before=t3_"+idPrev;
+    }
+    if(idNext) {
+      address += "&after=t3_"+idNext;
+    }
+    this.dataService.getData(address).subscribe(
       result => {
         if(result != null) this.items = this.dataService.buildData(result);
-        else this.items = [];
         this.loaded = true;
       }
     );
   }
 
   public next() {
-    console.log("next click");
+    var lastId : string = undefined;
+    if(this.items.length > 0)
+      lastId = this.items[this.items.length-1].id;
+    this.requestData(this.itemsInPage, undefined, lastId);
   }
   
   public preview() {
-    console.log("prev click");
+    var firstId : string = undefined;
+    if(this.items.length > 0)
+      firstId = this.items[0].id;
+    this.requestData(this.itemsInPage, firstId, undefined);
   }
 
   public onSearch(s : string) {
