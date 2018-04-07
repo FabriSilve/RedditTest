@@ -19,7 +19,7 @@ export class SearchBarComponent implements OnInit {
   }
 
   public onSearch() {
-    this.search.emit(this.searchInput);
+    this.search.emit(this.searchInput.replace(/\s/g, "-"));
   }
 
   public onPageChange(n : number) {
