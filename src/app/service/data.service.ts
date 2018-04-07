@@ -17,7 +17,7 @@ export class DataService {
     return this.http.get<ServerDataFull>(address)
     .pipe(
       tap(result => console.log("DATA_GET")),
-      catchError(this.handleError<ServerDataFull>('DATA_GET', res))
+      catchError(this.handleError<ServerDataFull>('DATA_GET', null))
     );
   }
 
@@ -44,7 +44,7 @@ export class DataService {
 
 }
 
-const res : any = {
+/*const res : any = {
   kind: "Listing",
   data: {
   after: "t3_89bohr",
@@ -660,3 +660,4 @@ const res : any = {
   before: null
   }
   };
+*/

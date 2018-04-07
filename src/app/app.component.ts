@@ -36,7 +36,8 @@ export class AppComponent implements OnInit {
   private requestData(n : number) : void {
     this.dataService.getData(this.addressBuilder(this.searchInput)+"?limit="+(n-1)).subscribe(
       result => {
-        this.items = this.dataService.buildData(result);
+        if(result != null) this.items = this.dataService.buildData(result);
+        else this.items = [];
         this.loaded = true;
       }
     );
