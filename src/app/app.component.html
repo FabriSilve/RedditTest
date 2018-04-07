@@ -12,7 +12,7 @@
         (sortComments)="sortByComments()"
     ></search-bar>
 
-    <items [items]="items"></items>
+    <items *ngIf="items" [items]="items.slice(0, itemsInPage)"></items>
     
     <div class="container">
         <div class="row">
