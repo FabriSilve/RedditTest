@@ -1,6 +1,8 @@
+
+/*GRID */
 .og-grid {
 	list-style: none;
-	padding: 20px 0;
+	padding: 5px 0;
 	margin: 0 auto;
 	text-align: center;
 	width: 100%;
@@ -8,10 +10,9 @@
 
 .og-grid li {
 	display: inline-block;
-	margin: 20px;
+	margin: 1em;
 	vertical-align: top;
-    height: 200px;
-    margin-bottom: 50px;
+    height: auto;
 }
 
 .og-grid li > a,
@@ -22,61 +23,23 @@
     position: relative;
 }
 
-.item {
-    position: absolute;
-    display: block;
-    width: auto;
+
+
+.thumbnail-image {
+    width:auto;
+    max-width: 250px;
+    min-width: 220px;
     height: auto;
-    background: rgb(171, 174, 190);
+    min-height: 200px;
+    border: rgb(58, 58, 58) 3px solid;
 }
 
-.thumbnail {
-    position: relative;
-    border-radius: 15px 50px;
-    width: 250px;
-    height: 250px;
-    overflow-x: hidden;
-    border: rgb(85, 91, 131) 3px solid;
-    transition: transform .2s;
-    box-shadow: -10px -5px #a2a3c4;
-  }
-  .thumbnail img {
-    z-index: 0;
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    height: 100%;
-    width: auto;
-    -webkit-transform: translate(-50%,-50%);
-        -ms-transform: translate(-50%,-50%);
-            transform: translate(-50%,-50%);
-  }
-
-  .thumbnail::after {
-      height: 30px;
-  }
-
-  .thumbnail:hover {
-    transform: scale(1.5);
-    z-index: 5;
-    box-shadow: 0 0 #888888;
-  }
-
-
-.thumbnail-title{
-    position: absolute;
-    z-index: 2;
-    top: 0;
-    left: 0;
-    right: 0;
-    display: none;
-    background: rgba(255, 255, 255, 0.6);
-}
-
-.thumbnail h4 {
+.polaroid-image h4 {
     font-size: 100%;
     text-align: center;
-    color: rgb(40, 36, 107);
+    color: rgb(80, 80, 80);
+    margin: 0;
+    width: 100%;
 }
 
 .sign {
@@ -85,23 +48,16 @@
     padding-right: 1em;
 }
 
-.show {
-    display: block;
-}
-
 .values {
     padding-left: 0.5em;
     font-size: 100%;
     padding-right: 0.5em;
 }
 
-.thumbnail-footer {
-    z-index: 2;
-    position: absolute;
-    bottom: 0;
-    left:0;
-    right:0;
-    background: rgba(255, 255, 255, 0.7);
+.footer {
+    max-width: 210px;
+    height: auto;
+    padding: 0;
 }
 
 .focus {
@@ -109,4 +65,80 @@
     position: fixed;
     top: 10%;
     left: 10%;
+}
+
+
+/**POLAROID*/
+.polaroid-image a
+ {
+     background: white;
+     display: inline;
+     float: left;
+     margin: 0 15px 30px;
+     padding: 10px;
+     text-align: center;
+     text-decoration: none;
+     -webkit-box-shadow: 0 4px 6px rgba(0, 0, 0, .5);
+     -moz-box-shadow: 0 4px 6px rgba(0,0,0,.5);
+     box-shadow: 0 4px 6px rgba(0,0,0,.5);
+     -webkit-transition: all .15s linear;
+     -moz-transition: all .15s linear;
+     transition: all .15s linear;
+     z-index:0;
+     position:relative;     
+ }
+ 
+ .polaroid-image .footer {
+     padding-top: 10px;
+     padding-bottom: 0;
+ }
+ 
+ .polaroid-image a:after {
+     color: #333;
+     font-size: 20px;
+     content: attr(title);
+     position: relative;
+     top:15px;
+ }
+ 
+ .polaroid-image img { 
+     display: block; 
+    /* width: inherit;*/ 
+ }
+
+.polaroid-images .polaroid-image:nth-child(1n)
+{
+    -webkit-transform: rotate(4deg);  
+    -moz-transform: rotate(4deg); 
+    transform: rotate(4deg); 
+}
+.polaroid-images .polaroid-image:nth-child(2n) { 
+    -webkit-transform: rotate(-24deg);  
+    -moz-transform: rotate(-24deg); 
+    transform: rotate(-24deg); 
+}
+.polaroid-images .polaroid-image:nth-child(3n)
+{
+    -webkit-transform: rotate(14deg);  
+    -moz-transform: rotate(14deg); 
+    transform: rotate(14deg); 
+}
+.polaroid-images .polaroid-image:nth-child(4n)
+{
+    -webkit-transform: rotate(-18deg);  
+    -moz-transform: rotate(-18deg); 
+    transform: rotate(-18deg); 
+}
+
+.polaroid-image a:hover{
+    -webkit-transform: rotate(0deg); 
+    -moz-transform: rotate(0deg);
+        transform: rotate(0deg);
+    -webkit-transform: scale(1.2); 
+    -moz-transform: scale(1.2);
+        transform: scale(1.2);
+    z-index:10;
+    -webkit-box-shadow: 0 10px 20px rgba(0, 0, 0, .7);
+    -moz-box-shadow: 0 10px 20px rgba(0,0,0,.7);
+        box-shadow: 0 10px 20px rgba(0,0,0,.7);
 }

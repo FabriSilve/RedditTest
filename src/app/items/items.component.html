@@ -26,8 +26,33 @@
 <no-result *ngIf="items?.length === 0"></no-result>
 
 
-<ul id="og-grid" class="og-grid">
+<ul id="og-grid" class="og-grid polaroid-images">
   <li *ngFor="let item of items">
+    <div class="polaroid-image" (click)="focusItem(item.id)">
+        <a>
+          <img class="thumbnail-image" [src]="item.thumbnail" [alt]="item.title" [title]="item.title" onError="this.src='assets/img/reddit.jpg'"/>
+          <div class="footer">
+            <h4>
+              {{ (item.title.length>42)? ((item.title | slice:0:42)+'...'):(item.title) }}
+            </h4>
+            <div class="values">
+              <div class="row">
+                <span class="col-6-sm left">
+                  <i class="fas fa-trophy"></i> {{item.score}} 
+                </span>
+                <div class="col-6-sm right">
+                  {{item.num_comments}} <i class="fas fa-comments"></i>    
+                </div>
+              </div>
+            </div>
+            <div class="sign">
+              Posted by <strong class="author">{{ item.author }}</strong> in <i class="created">{{ dateConverter(item.created) | date:'mediumDate' }}</i>
+            </div>
+            
+          </div>
+        </a>
+    </div>
+    <!--
     <div class="thumbnail" (mouseenter)="mouseIn(item.id)" (mouseleave)="mouseOut(item.id)" (click)="focusItem(item.id)">
       <a>
         <div [class.show]="currentId === item.id" class="thumbnail-title">
@@ -38,10 +63,10 @@
           <div class="values">
             <div class="row">
               <span class="col-6-sm left">
-                <!--&#9733; <!--&#10025;--><i class="fas fa-trophy"></i> {{item.score}} 
+                <i class="fas fa-trophy"></i> {{item.score}} 
               </span>
               <div class="col-6-sm right">
-                {{item.num_comments}} <i class="fas fa-comments"></i><!--&#10080;  -->      
+                {{item.num_comments}} <i class="fas fa-comments"></i>    
               </div>
             </div>
           </div>
@@ -51,6 +76,7 @@
         </div> 
       </a>
     </div>
+  -->
   </li>
 </ul>
 
