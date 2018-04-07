@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { Item } from '../../model/item';
 
 @Component({
@@ -9,10 +9,16 @@ import { Item } from '../../model/item';
 export class ItemComponent implements OnInit {
 
   @Input() public item : Item;
+  @Output() public onClose : EventEmitter<boolean> = new EventEmitter();
 
   constructor() { }
 
   ngOnInit() {
+  }
+
+  public close() {
+    console.log("close");
+    this.onClose.emit(true);
   }
 
 }

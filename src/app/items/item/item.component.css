@@ -1,11 +1,30 @@
 .full {
-    z-index: 20;
-    position: fixed;
+    z-index: 100;
+    position: absolute;
     top: 0;
     left: 0;
     right: 0;
     min-height: 100%;
+    max-width: 100%;
     background: rgba(34, 34, 34, 0.6);
+    /*min-height: 100%;
+    padding: 100px 0;
+    text-align: center;
+    border: none;
+    border-radius: 0;
+    background-clip: border-box;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    position: absolute;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid rgba(0,0,0,.2);
+    border-radius: .3rem;
+    outline: 0;*/
 }
 
 .photo {
@@ -19,8 +38,15 @@
 }
 
 .focused {
+    overflow-x: hidden;
     background: rgb(207, 209, 218);
     border-radius: 20px;
     margin-top: 5%;
     box-shadow: 0 0 10px 5px rgb(43, 42, 42);
+}
+
+.close {
+    padding: 1em;
+    font-size: 110%;
+    color:black;
 }

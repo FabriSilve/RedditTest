@@ -34,4 +34,8 @@ export class ItemsComponent implements OnInit {
     this.focusId = id;
   }
 
+  public onClose() {
+    this.focusId = "";
+  }
+
 }
