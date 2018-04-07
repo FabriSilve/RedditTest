@@ -23,6 +23,8 @@
   Posted by <strong class="author">{{ item.author }}</strong> in <i class="created">{{ date | date:'mediumDate' }}</i>
 </div>-->
 
+<no-result *ngIf="items?.length === 0"></no-result>
+
 
 <ul id="og-grid" class="og-grid">
   <li *ngFor="let item of items">
