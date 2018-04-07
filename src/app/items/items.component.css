@@ -43,15 +43,30 @@
 }
 
 .sign {
+    width: inherit;
     text-align: right;
-    font-size: 70%;
-    padding-right: 1em;
+    font-size: 60%;
+    padding-top: 1em;
+    text-align: right;
+    color: rgb(131, 131, 131);
 }
 
 .values {
-    padding-left: 0.5em;
-    font-size: 100%;
-    padding-right: 0.5em;
+    width: inherit;
+    position: relative;
+    left: 0;
+    right: 0;
+    padding-top: 0.5em;
+    font-size: 60%;
+    color: rgb(55, 55, 55);
+}
+
+.left {
+    text-align: left;
+}
+
+.tab {
+    padding-left: 1em;
 }
 
 .footer {
