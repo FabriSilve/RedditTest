@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ElementRef, ViewChild } from '@angular/core';
 
 import { DataService } from './service/data.service';
 import { Item } from './model/item';
@@ -11,6 +11,7 @@ import { Item } from './model/item';
 })
 export class AppComponent implements OnInit {
 
+  @ViewChild('body') public body : ElementRef;
   
   public items : Item[];
   public loaded : boolean = false;
@@ -57,6 +58,12 @@ export class AppComponent implements OnInit {
   public onNumPage(n : number) {
     this.itemsInPage = n;
     this.requestData(this.itemsInPage);
+  }
+
+  public onMove(b : boolean) {
+    if(b) {
+      this.body.nativeElement.scrollIntoView({ behavior: 'smooth', block: 'start', inline: 'start' });
+    }
   }
 
   private addressBuilder(s : string) : string {

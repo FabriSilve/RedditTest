@@ -1,9 +1,9 @@
 
 
-<header></header>
+<header (goToBody)="onMove($event)"></header>
 
 
- <section id="body">
+ <section #body id="body">
 
     <search-bar (search)="onSearch($event)" (itemsNum)="onNumPage($event)"></search-bar>
 
