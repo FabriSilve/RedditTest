@@ -67,6 +67,14 @@ export class AppComponent implements OnInit {
     }
   }
 
+  public sortByScore() {
+    this.items.sort((a, b) => b.score - a.score);
+  }
+
+  public sortByComments() {
+    this.items.sort((a, b) => b.num_comments - a.num_comments);
+  }
+
   private addressBuilder(s : string) : string {
     return "https://www.reddit.com/r/"+s+".json";
   }

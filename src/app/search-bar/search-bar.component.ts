@@ -12,6 +12,8 @@ export class SearchBarComponent implements OnInit {
 
   @Output() search: EventEmitter<string> = new EventEmitter();
   @Output() itemsNum : EventEmitter<number> = new EventEmitter();
+  @Output() sortScore : EventEmitter<boolean> = new EventEmitter();
+  @Output() sortComments : EventEmitter<boolean> = new EventEmitter();
 
   constructor() { }
 
@@ -25,6 +27,14 @@ export class SearchBarComponent implements OnInit {
   public onPageChange(n : number) {
     this.itemsInPage = n;
     this.itemsNum.emit(n);
+  }
+
+  public onSorting(c : boolean) {
+    if(c) {
+      this.sortScore.emit(true);
+    } else {
+      this.sortComments.emit(true);
+    }
   }
 
 }

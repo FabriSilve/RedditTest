@@ -5,7 +5,12 @@
 
  <section #body id="body">
 
-    <search-bar (search)="onSearch($event)" (itemsNum)="onNumPage($event)"></search-bar>
+    <search-bar 
+        (search)="onSearch($event)" 
+        (itemsNum)="onNumPage($event)"
+        (sortScore)="sortByScore($event)"
+        (sortComments)="sortByComments($event)"
+    ></search-bar>
 
     <items [items]="items"></items>
     
