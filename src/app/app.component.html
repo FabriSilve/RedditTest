@@ -8,8 +8,8 @@
     <search-bar 
         (search)="onSearch($event)" 
         (itemsNum)="onNumPage($event)"
-        (sortScore)="sortByScore($event)"
-        (sortComments)="sortByComments($event)"
+        (sortScore)="sortByScore()"
+        (sortComments)="sortByComments()"
     ></search-bar>
 
     <items [items]="items"></items>
