@@ -13,6 +13,7 @@
 	margin: 1em;
 	vertical-align: top;
     height: auto;
+    transition: all .15s linear;
 }
 
 .og-grid li > a,
@@ -182,10 +183,7 @@
     transform: rotate(-18deg); 
 }
 
-.polaroid-image a:hover{
-    -webkit-transform: rotate(0deg); 
-    -moz-transform: rotate(0deg);
-        transform: rotate(0deg);
+.polaroid-images a:hover{        
     -webkit-transform: scale(1.2); 
     -moz-transform: scale(1.2);
         transform: scale(1.2);
@@ -193,4 +191,10 @@
     -webkit-box-shadow: 0 10px 20px rgba(0, 0, 0, .7);
     -moz-box-shadow: 0 10px 20px rgba(0,0,0,.7);
         box-shadow: 0 10px 20px rgba(0,0,0,.7);
+}
+
+.polaroid-images li:hover {
+    -webkit-transform: rotate(0deg); 
+    -moz-transform: rotate(0deg);
+        transform: rotate(0deg);
 }
