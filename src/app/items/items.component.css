@@ -71,6 +71,7 @@
     color: rgb(80, 80, 80);
     margin: 0;
     width: 100%;
+    word-wrap: break-word;
 }
 
 .sign {
@@ -80,6 +81,7 @@
     padding-top: 1em;
     text-align: right;
     color: rgb(131, 131, 131);
+    word-wrap: break-word;
 }
 
 .values {

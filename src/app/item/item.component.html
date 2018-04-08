@@ -1,6 +1,6 @@
 <div class="full" *ngIf="item">
   <div class="container focused">
-
+    <div class="row">
       <div class="close-bar">
         <a (click)="close()" routerLink="/search">
           <div id="close">
@@ -8,10 +8,12 @@
           </div>
         </a>
       </div>
+    </div>
     <div class="row margin-top">
-      <div class="col-sm-6">
+      <div class="col-sm-6 col-xs-12">
         <div #polaroid class="polaroid-image" [ngClass]="{'potrait': potrait}">
             <img #image [src]="item.url" [alt]="item.title" onError="this.src='assets/img/reddit.jpg'" (load)="imageLoaded()"/>
+            <h4>{{item.title}}</h4>
             <div class="footer">
               <div class="sign">
                 Posted by <strong class="author">{{ item.author }}</strong> in <i class="created">{{ dateConverter(item.created) | date:'mediumDate' }}</i>
@@ -21,42 +23,18 @@
                 <i class="tab"></i><i class="fas fa-comments"></i>{{item.num_comments}}    
               </div>
             </div>
-        </div>
-
-        <!--<div class="photo">
-          <h4>{{item.title}}</h4>
-          <img class="image" [src]="item.url" [alt]="item.title" onError="this.src='assets/img/reddit.jpg'"/>
-        </div>
-      -->
-
-      </div>
-      <div class="col-sm-6">
-
-        <div id="text" class="margin-top">
-            <h3>{{item.title}}</h3>
-            <p>
-              {{item.selftext}}
-            </p>
-        </div>
-
-
-        <!--<div class="data">
-          <div class="selftext">
-            <p>{{item.selftext}}</p>
-            <div class="values">
-              <div class="row">
-                <span class="col-6-sm left">
-                  <i class="fas fa-trophy"></i> {{item.score}} 
-                </span>
-                <div class="col-6-sm right">
-                  {{item.num_comments}} <i class="fas fa-comments"></i>
-              </div>
-            </div>
           </div>
-          
-        </div>-->
-
-
+      </div>
+      <div class="col-sm-6 col-xs-12">
+        <div *ngIf="item.selftext" id="text" class="margin-top">
+          <p>
+            <i class="title-text">Text:</i><br/>
+            {{item.selftext}}
+          </p>
+        </div>
+        <div id="comments" class="margin-top">
+          commenti
+        </div>
       </div>
     </div>
   </div>

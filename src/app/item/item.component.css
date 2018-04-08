@@ -26,7 +26,9 @@
     transform: rotate(5deg);
     border-radius: 5px; 
     position: absolute;
-    right: 10%;
+    right: 1%;
+    z-index: 5;
+
 }
 
 a:hover {
@@ -55,7 +57,6 @@ a:hover {
      transition: all 0.5s ease-in-out;
      transform: all .5s ease-in-out;
      z-index:0;
-     position:relative;
      -webkit-transform: rotate(-4deg);  
      -moz-transform: rotate(-4deg); 
      transform: rotate(-4deg);
@@ -69,6 +70,7 @@ a:hover {
 
  .polaroid-image:hover {
     z-index: 100;
+    position: relative;
     transform: scale(1.2);
     transform-origin: left center;
  }
@@ -96,6 +98,13 @@ a:hover {
     padding: 0;
 }
 
+.polaroid-image h4 {
+    font-size: 100%;
+    text-align: center;
+    color: rgb(80, 80, 80);
+    margin-top: 0.5em;
+    width: 100%;
+}
 
  .sign {
     width: inherit;
@@ -109,7 +118,7 @@ a:hover {
 
 .values {
     width: inherit;
-    position: relative;
+    /*position: relative;*/
     left: 0;
     right: 0;
     padding-top: 0.5em;
@@ -127,6 +136,11 @@ a:hover {
 
 /**TEXT*/
 
+.title-text {
+    color: grey;
+    font-size: 80%;
+}
+
 #text {
     z-index: 5;
     width:100%;
@@ -134,6 +148,18 @@ a:hover {
     background:#FFF;
     padding: 1em;
     box-shadow: 3px 7px 8px #777;
-    transform: rotate(2deg);
+    transform: rotate(-2deg);
+    border-radius: 3px;
+    word-wrap: break-word;
+}
+
+#comments {
+    z-index: 5;
+    width:100%;
+    height:auto;
+    background:#FFF;
+    padding: 1em;
+    box-shadow: 3px 7px 8px #777;
+    transform: rotate(3deg);
     border-radius: 3px; 
 }
