@@ -1,15 +1,11 @@
 
 <no-result *ngIf="items?.length === 0"></no-result>
 
-<!--<div *ngFor="let item of items">
-  <item [hidden]="item.id != focusId" [item]="item" (onClose)="onClose()"></item>
-</div>-->
-
 <div class="container">
   <ul id="og-grid" class="og-grid polaroid-images">
     <li *ngFor="let item of items">
       <div class="polaroid-image">
-          <a (click)="focusItem(item)" routerLink="/search/{{item.id}}" >
+          <a (click)="focusItem(item)" routerLink="/details/{{item.id}}" >
             <img class="thumbnail-image" [src]="item.thumbnail" [alt]="item.title" [title]="item.title" onError="this.src='assets/img/reddit.jpg'"/>
             <div class="footer">
               <h4>

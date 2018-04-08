@@ -3,7 +3,7 @@ import { Item } from '../model/models';
 import { DataService } from '../service/data.service';
 
 @Component({
-  selector: 'app-search',
+  selector: 'search',
   templateUrl: './search.component.html',
   styleUrls: ['./search.component.css']
 })

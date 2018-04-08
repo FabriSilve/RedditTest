@@ -21,6 +21,7 @@ export interface Item {
     permalink : string;
     title : string;
     selftext : string;
+    url : string;
 
     
    /* selftext: "",

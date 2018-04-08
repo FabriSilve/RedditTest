@@ -1,40 +1,56 @@
-<div class="full">
+<div class="full" *ngIf="item">
   <div class="container focused">
     <div class="row">
       <div class="col-xs-2 col-xs-offset-10">
-        <a (click)="close()" class="close">X</a>
+        <a (click)="close()" routerLink="/search">
+          <div id="close">
+              Close
+          </div>
+        </a>
       </div>
     </div>
     <div class="row">
       <div class="col-6">
-        <div class="photo">
-          <h4>{{item.title}}</h4>
-          <img class="image" [src]="item.thumbnail" [alt]="item.title" onError="this.src='assets/img/reddit.jpg'"/>
+        <div #polaroid class="polaroid-image" [ngClass]="{'potrait': potrait}">
+            <img #image [src]="item.url" [alt]="item.title" onError="this.src='assets/img/reddit.jpg'" (load)="imageLoaded()"/>
+            <div class="footer">
+              <div class="sign">
+                Posted by <strong class="author">{{ item.author }}</strong> in <i class="created">{{ dateConverter(item.created) | date:'mediumDate' }}</i>
+              </div>
+              <div class="values left">
+                <i class="fas fa-trophy"></i> {{item.score}}
+                <i class="tab"></i><i class="fas fa-comments"></i>{{item.num_comments}}    
+              </div>
+            </div>
         </div>
+
+        <!--<div class="photo">
+          <h4>{{item.title}}</h4>
+          <img class="image" [src]="item.url" [alt]="item.title" onError="this.src='assets/img/reddit.jpg'"/>
+        </div>
+      -->
+
       </div>
       <div class="col-6">
-        <div class="data">
+
+
+        <!--<div class="data">
           <div class="selftext">
             <p>{{item.selftext}}</p>
             <div class="values">
               <div class="row">
                 <span class="col-6-sm left">
-                  <!--&#9733; <!--&#10025;--><i class="fas fa-trophy"></i> {{item.score}} 
+                  <i class="fas fa-trophy"></i> {{item.score}} 
                 </span>
                 <div class="col-6-sm right">
-                  {{item.num_comments}} <i class="fas fa-comments"></i><!--&#10080;  -->      
-                </div>
+                  {{item.num_comments}} <i class="fas fa-comments"></i>
               </div>
             </div>
           </div>
-          <div class="comments">
-            <ul class="commentList">
-              <!--<li *ngFor="let comment of comments">
-                ciao
-              </li>-->
-            </ul>
-          </div>
-        </div>
+          
+        </div>-->
+
+
       </div>
     </div>
   </div>

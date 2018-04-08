@@ -7,7 +7,7 @@ import { FormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 import { ItemsComponent } from './items/items.component';
 import { DataService } from './service/data.service';
-import { ItemComponent } from './items/item/item.component';
+import { ItemComponent } from './item/item.component';
 import { HeaderComponent } from './header/header.component';
 import { SearchBarComponent } from './search-bar/search-bar.component';
 import { NoResultComponent } from './no-result/no-result.component';

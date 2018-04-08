@@ -6,8 +6,9 @@ import { ItemComponent } from './item/item.component';
 
 const routes: Routes = [
   { path: 'search', component: SearchComponent},
-  { path: 'search/:id', component: ItemComponent },
+  { path: 'details/:id', component: ItemComponent },
   { path: '', redirectTo: '/search', pathMatch: 'full' },
+  /*{ path: '**', component: PageNotFoundComponent }*/
 ];
 
 @NgModule({

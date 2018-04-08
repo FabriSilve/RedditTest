@@ -1,13 +1,87 @@
 .full {
-    z-index: 100;
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
+    width:100%;
+    height: auto;
     min-height: 100%;
-    max-width: 100%;
-    background: rgba(34, 34, 34, 0.6);
+    background: url('assets/img/section-bg2.jpg');
+    background-repeat: repeat;
+    background-attachment: scroll;
+    background-position: top left;
+    background-size: auto;
 }
+
+#close {
+    width:auto;
+    height:auto;
+    background:#FFF;
+    padding: 10px;
+    margin-top: 1em;
+    text-align: center;
+    /*background: #777;*/
+    box-shadow: 5px 10px 10px #777;
+    transform: rotate(3deg);
+    border-radius: 5px; 
+}
+
+a:hover {
+    text-decoration: none;
+}
+
+/**POLAROID*/
+.polaroid-image
+ {
+     background: white;
+     /*display: inline;*/
+     float: left;
+     margin: 0 15px 30px;
+     padding: 10px;
+     text-align: center;
+     text-decoration: none;
+     -webkit-box-shadow: 0 4px 6px rgba(0, 0, 0, .5);
+     -moz-box-shadow: 0 4px 6px rgba(0,0,0,.5);
+     box-shadow: 0 4px 6px rgba(0,0,0,.5);
+     -webkit-transition: all .5s ease-in-out;
+     -moz-transition: all .5s ease-in-out;
+     transition: all 0.5s ease-in-out;
+     transform: all .5s ease-in-out;
+     z-index:0;
+     position:relative;
+     -webkit-transform: rotate(-4deg);  
+     -moz-transform: rotate(-4deg); 
+     transform: rotate(-4deg);
+     width: 40%;
+     height: auto;
+ }
+
+.potrait {
+    width: 30%;
+}
+
+ .polaroid-image:hover {
+    z-index: 100;
+    transform: scale(1.2);
+    transform-origin: left center;
+ }
+
+ @media screen and (max-width: 700px) {
+    .polaroid-image {
+        width: 70%;
+    } 
+}
+ 
+ .polaroid-image .footer {
+     padding-top: 10px;
+     padding-bottom: 0;
+ }
+ 
+ .polaroid-image img {
+     width: 100%;
+     height: auto;
+    /* width: inherit;*/ 
+ }
+
+
+
+/*
 
 .photo {
     padding: 10px;
@@ -23,7 +97,6 @@
     overflow-x: hidden;
     background: rgb(207, 209, 218);
     border-radius: 20px;
-    margin-top: 5%;
     box-shadow: 0 0 10px 5px rgb(43, 42, 42);
 }
 
@@ -31,4 +104,4 @@
     padding: 1em;
     font-size: 110%;
     color:black;
-}
+}*/

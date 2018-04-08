@@ -1,5 +1,7 @@
-import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter, ViewChild, ElementRef } from '@angular/core';
 import { Item } from '../model/models';
+import { DataService } from '../service/data.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'item',
@@ -8,17 +10,35 @@ import { Item } from '../model/models';
 })
 export class ItemComponent implements OnInit {
 
-  @Input() public item : Item;
-  @Output() public onClose : EventEmitter<boolean> = new EventEmitter();
+ /* @Output() public onClose : EventEmitter<boolean> = new EventEmitter();*/
+  public item : Item;
+  public potrait : boolean = false;
 
-  constructor() { }
+  @ViewChild('image') image: ElementRef;
 
-  ngOnInit() {
+  constructor(
+    private dataService : DataService,
+    private router: Router
+  ) { 
   }
 
+  ngOnInit() {
+    this.item = this.dataService.getFocusItem();
+    if(!this.item) this.router.navigate(['/search']);   
+  }
+
+  public imageLoaded() {
+    this.potrait = (this.image.nativeElement.height > this.image.nativeElement.width);
+  }
+
+
   public close() {
-    console.log("close");
-    this.onClose.emit(true);
+    this.dataService.clearFocus();
+    /*this.onClose.emit(true);*/
+  }
+
+  public dateConverter(ms : number) : Date {
+    return new Date(ms*1000);
   }
 
 }
