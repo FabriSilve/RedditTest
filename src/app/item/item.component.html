@@ -1,15 +1,14 @@
 <div class="full" *ngIf="item">
   <div class="container focused">
-    <div class="row">
-      <div class="col-xs-2 col-xs-offset-10">
+
+      <div class="close-bar">
         <a (click)="close()" routerLink="/search">
           <div id="close">
               Close
           </div>
         </a>
       </div>
-    </div>
-    <div class="row">
+    <div class="row margin-top">
       <div class="col-6">
         <div #polaroid class="polaroid-image" [ngClass]="{'potrait': potrait}">
             <img #image [src]="item.url" [alt]="item.title" onError="this.src='assets/img/reddit.jpg'" (load)="imageLoaded()"/>
