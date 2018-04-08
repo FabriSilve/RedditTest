@@ -73,6 +73,10 @@ export class SearchComponent implements OnInit {
     }
   }
 
+  public onFocus(item : Item) {
+    this.dataService.setFocus(item);
+  }
+
   public sortByScore() {
     this.items.sort((a, b) => b.score - a.score);
   }

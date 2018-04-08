@@ -53,6 +53,10 @@ export class DataService {
     this.focus = item;
   }
 
+  public clearFocus() : void {
+    this.focus = null;
+  }
+
   private addressBuilder(s : string) : string {
     if(s === "") s = "sweden";
     return "https://www.reddit.com/r/"+s+".json";

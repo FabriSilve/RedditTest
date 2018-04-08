@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, EventEmitter, Output } from '@angular/core';
 import { Item } from '../model/item';
 
 @Component({
@@ -9,9 +9,9 @@ import { Item } from '../model/item';
 export class ItemsComponent implements OnInit {
 
   @Input() public items : Item[];
+  @Output() public onFocus : EventEmitter<Item> = new EventEmitter();
 
   public currentId : string = "";
-  public focusId : string = "";
 
   constructor() { }
 
@@ -30,12 +30,7 @@ export class ItemsComponent implements OnInit {
     this.currentId = "";
   }
 
-  public focusItem(id : string) {
-    this.focusId = id;
+  public focusItem(item : Item) {
+    this.onFocus.emit(item);
   }
-
-  public onClose() {
-    this.focusId = "";
-  }
-
 }
