@@ -7,24 +7,6 @@
     min-height: 100%;
     max-width: 100%;
     background: rgba(34, 34, 34, 0.6);
-    /*min-height: 100%;
-    padding: 100px 0;
-    text-align: center;
-    border: none;
-    border-radius: 0;
-    background-clip: border-box;
-    -webkit-box-shadow: none;
-    box-shadow: none;
-    position: absolute;
-    display: -ms-flexbox;
-    display: flex;
-    -ms-flex-direction: column;
-    flex-direction: column;
-    background-color: #fff;
-    background-clip: padding-box;
-    border: 1px solid rgba(0,0,0,.2);
-    border-radius: .3rem;
-    outline: 0;*/
 }
 
 .photo {
