@@ -3,10 +3,11 @@
     height: auto;
     min-height: 100%;
     background: url('assets/img/section-bg2.jpg');
-    background-repeat: repeat;
+    background-repeat: repeat-y;
     background-attachment: scroll;
     background-position: top left;
     background-size: auto;
+    padding-bottom: 2em;
 }
 
 .close-bar {
@@ -36,7 +37,7 @@ a:hover {
 }
 
 .margin-top {
-    margin-top: 3em;
+    margin-top: 2em;
 }
 
 /**POLAROID*/
