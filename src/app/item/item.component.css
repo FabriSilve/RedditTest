@@ -23,7 +23,7 @@
     text-align: center;
     /*background: #777;*/
     box-shadow: 5px 10px 10px #777;
-    transform: rotate(3deg);
+    transform: rotate(5deg);
     border-radius: 5px; 
     position: absolute;
     right: 10%;
@@ -34,7 +34,7 @@ a:hover {
 }
 
 .margin-top {
-    margin-top: 4em;
+    margin-top: 3em;
 }
 
 /**POLAROID*/
@@ -59,12 +59,12 @@ a:hover {
      -webkit-transform: rotate(-4deg);  
      -moz-transform: rotate(-4deg); 
      transform: rotate(-4deg);
-     width: 40%;
+     width: 80%;
      height: auto;
  }
 
 .potrait {
-    width: 30%;
+    width: 60%;
 }
 
  .polaroid-image:hover {
@@ -90,29 +90,50 @@ a:hover {
     /* width: inherit;*/ 
  }
 
-
-
-/*
-
-.photo {
-    padding: 10px;
-}
-
-.image {
+ .footer {
     width: 100%;
     height: auto;
-    border-radius: 10px;
+    padding: 0;
 }
 
-.focused {
-    overflow-x: hidden;
-    background: rgb(207, 209, 218);
-    border-radius: 20px;
-    box-shadow: 0 0 10px 5px rgb(43, 42, 42);
+
+ .sign {
+    width: inherit;
+    text-align: right;
+    font-size: 80%;
+    padding-top: 0.5em;
+    padding-right: 1em;
+    text-align: right;
+    color: rgb(131, 131, 131);
 }
 
-.close {
+.values {
+    width: inherit;
+    position: relative;
+    left: 0;
+    right: 0;
+    padding-top: 0.5em;
+    font-size: 70%;
+    color: rgb(55, 55, 55);
+}
+
+.left {
+    text-align: left;
+}
+
+.tab {
+    padding-left: 1em;
+}
+
+/**TEXT*/
+
+#text {
+    z-index: 5;
+    width:100%;
+    height:auto;
+    background:#FFF;
     padding: 1em;
-    font-size: 110%;
-    color:black;
-}*/
+    box-shadow: 3px 7px 8px #777;
+    transform: rotate(2deg);
+    border-radius: 3px; 
+}

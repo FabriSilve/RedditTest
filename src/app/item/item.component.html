@@ -9,7 +9,7 @@
         </a>
       </div>
     <div class="row margin-top">
-      <div class="col-6">
+      <div class="col-sm-6">
         <div #polaroid class="polaroid-image" [ngClass]="{'potrait': potrait}">
             <img #image [src]="item.url" [alt]="item.title" onError="this.src='assets/img/reddit.jpg'" (load)="imageLoaded()"/>
             <div class="footer">
@@ -30,7 +30,14 @@
       -->
 
       </div>
-      <div class="col-6">
+      <div class="col-sm-6">
+
+        <div id="text" class="margin-top">
+            <h3>{{item.title}}</h3>
+            <p>
+              {{item.selftext}}
+            </p>
+        </div>
 
 
         <!--<div class="data">
