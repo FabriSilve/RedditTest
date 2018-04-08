@@ -4,7 +4,7 @@ import { HttpHeaders, HttpClient } from '@angular/common/http';
 import { tap, catchError } from 'rxjs/operators';
 import { of } from 'rxjs/observable/of';
 
-import { Item, ServerDataFull } from '../model/item';
+import { Item, ServerDataFull } from '../model/models';
 
 
 @Injectable()
