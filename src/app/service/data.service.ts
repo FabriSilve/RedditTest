@@ -10,10 +10,25 @@ import { Item, ServerDataFull } from '../model/item';
 @Injectable()
 export class DataService {
 
+  private items : Item[];
+  private search : string;
+  private focus : Item;
+
+
   constructor( private http : HttpClient) { }
 
+  public setSearch(input : string) : void {
+    this.search = this.addressBuilder(input)
+  }
 
-  public getData(address : string) : Observable<ServerDataFull> {
+  public getData(n : number, idPrev? : string, idNext? : string ) : Observable<ServerDataFull> {
+    var address : string = this.search+"?limit="+n;;
+    if(idPrev) {
+      address += "&before=t3_"+idPrev;
+    }
+    if(idNext) {
+      address += "&after=t3_"+idNext;
+    }
     return this.http.get<ServerDataFull>(address)
     .pipe(
       tap(result => console.log("DATA_GET")),
@@ -33,6 +48,15 @@ export class DataService {
     });
     return items;
   }
+
+  public setFocus(item : Item ) : void {
+    this.focus = item;
+  }
+
+  private addressBuilder(s : string) : string {
+    if(s === "") s = "sweden";
+    return "https://www.reddit.com/r/"+s+".json";
+  } 
 
   private handleError<T> (operation = 'operation', result?: T) {
     return (error: any): Observable<T> => {

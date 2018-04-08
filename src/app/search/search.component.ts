@@ -32,14 +32,8 @@ export class SearchComponent implements OnInit {
   }
 
   private requestData(n : number, idPrev? : string, idNext? : string ) : void {
-    var address : string = this.addressBuilder(this.searchInput)+"?limit="+n;
-    if(idPrev) {
-      address += "&before=t3_"+idPrev;
-    }
-    if(idNext) {
-      address += "&after=t3_"+idNext;
-    }
-    this.dataService.getData(address).subscribe(
+    this.dataService.setSearch(this.searchInput);
+    this.dataService.getData(n, idPrev, idNext).subscribe(
       result => {
         if(result != null) this.items = this.dataService.buildData(result);
         this.loaded = true;
@@ -87,8 +81,5 @@ export class SearchComponent implements OnInit {
     this.items.sort((a, b) => b.num_comments - a.num_comments);
   }
 
-  private addressBuilder(s : string) : string {
-    if(s === "") s = "sweden";
-    return "https://www.reddit.com/r/"+s+".json";
-  }
+  
 }
