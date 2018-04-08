@@ -6,7 +6,6 @@
     min-height: 100%;
     background: url('assets/img/polaroid-bg.jpg');
     background-repeat: no-repeat;
-    background-attachment: scroll;
     background-position: bottom right;
     -webkit-background-size: cover;
     -moz-background-size: cover;
@@ -14,6 +13,12 @@
     background-size: cover;
     background-attachment: fixed;
   }
+
+@media screen and (max-width: 340px) {
+  #header {
+    background-attachment: scroll;
+  }
+}
   
   #reddit-alien {
     z-index: 1;
