@@ -12,6 +12,8 @@ import { HeaderComponent } from './header/header.component';
 import { SearchBarComponent } from './search-bar/search-bar.component';
 import { NoResultComponent } from './no-result/no-result.component';
 import { FooterComponent } from './footer/footer.component';
+import { AppRoutingModule } from './/app-routing.module';
+import { SearchComponent } from './search/search.component';
 
 
 
@@ -23,13 +25,15 @@ import { FooterComponent } from './footer/footer.component';
     HeaderComponent,
     SearchBarComponent,
     NoResultComponent,
-    FooterComponent
+    FooterComponent,
+    SearchComponent
   ],
   imports: [
     BrowserModule,
     HttpModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    AppRoutingModule
   ],
   providers: [
     DataService
