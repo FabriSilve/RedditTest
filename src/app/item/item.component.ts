@@ -3,6 +3,7 @@ import { Item } from '../model/models';
 import { DataService } from '../service/data.service';
 import { Router } from '@angular/router';
 import { AppService } from '../service/app.service';
+import { CommentsService } from '../service/comments.service';
 
 @Component({
   selector: 'item',
@@ -13,19 +14,22 @@ export class ItemComponent implements OnInit {
 
   public item : Item;
   public potrait : boolean = false;
+  public comments : any;
 
   @ViewChild('image') image: ElementRef;
 
   constructor(
     private dataService : DataService,
     private appService : AppService,
+    private commentsService : CommentsService,
     private router: Router
-  ) { 
+  ) {
   }
 
   ngOnInit() {
     this.item = this.appService.getFocusItem();
-    if(!this.item) this.router.navigate(['/']);   
+    if(!this.item) this.router.navigate(['/']);
+    this.getComments(); 
   }
 
   public imageLoaded() {
@@ -38,6 +42,21 @@ export class ItemComponent implements OnInit {
 
   public dateConverter(ms : number) : Date {
     return new Date(ms*1000);
+  }
+
+  public getComments() {
+    if(this.item == null) return;
+    /*console.log(this.item.url);*/
+    this.commentsService.getComments(this.item.url.slice(0, -1)).subscribe(
+      result => {
+        //console.log(result);
+        this.comments = result[1].data.children;
+       /* this.comments.forEach(element => {
+          console.log(element.data)
+        });*/
+      }
+    );
+    
   }
 
 }

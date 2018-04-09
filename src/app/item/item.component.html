@@ -32,8 +32,11 @@
             {{item.selftext}}
           </p>
         </div>
-        <div id="comments" class="margin-top">
-          commenti
+        <div *ngIf="comments" id="comments" class="margin-top">
+           <i class="title-text">Comments:</i><br/>
+          <div *ngFor="let comment of comments">
+            <comment [comment]="comment"></comment>
+          </div>
         </div>
       </div>
     </div>

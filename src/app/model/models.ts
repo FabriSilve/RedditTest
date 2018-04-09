@@ -1,3 +1,4 @@
+/*ITEM*/
 export interface ServerDataFull {
     data : ServerData;
 }
@@ -22,15 +23,24 @@ export interface Item {
     title : string;
     selftext : string;
     url : string;
-
-    
-   /* selftext: "",
-    id: "89bohr",
-    author: "Ollad",
-    score: 958,
-    thumbnail: "https://a.thumbs.redditmedia.com/LReg0ChxThIlAunOvCYIu-WVMHzbNFJefhDyfY32Bb4.jpg",
-    permalink: "/r/sweden/comments/89bohr/lillbabs_är_död_blev_80_år/",
-    created: 1522774439,
-    num_comments: 98,
-    title: "Lill-Babs är död - blev 80 år",*/
 }
+
+/*COMMENTS
+export interface ServerCommentsFull {
+    data : ServerComments;
+}
+
+interface ServerComments {
+    children : ServerComment[];
+}
+
+interface ServerComment {
+    data : Comment;
+}
+
+export interface Comment {
+    body : string;
+    replies : ServerCommentsFull;
+}
+*/
+

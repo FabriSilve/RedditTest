@@ -161,6 +161,6 @@ a:hover {
     background:#FFF;
     padding: 1em;
     box-shadow: 3px 7px 8px #777;
-    transform: rotate(3deg);
+    /*transform: rotate(3deg);*/
     border-radius: 3px; 
 }

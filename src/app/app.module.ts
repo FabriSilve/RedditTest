@@ -15,6 +15,8 @@ import { FooterComponent } from './footer/footer.component';
 import { AppRoutingModule } from './/app-routing.module';
 import { SearchComponent } from './search/search.component';
 import { AppService } from './service/app.service';
+import { CommentsService } from './service/comments.service';
+import { CommentComponent } from './comment/comment.component';
 
 
 
@@ -27,7 +29,8 @@ import { AppService } from './service/app.service';
     SearchBarComponent,
     NoResultComponent,
     FooterComponent,
-    SearchComponent
+    SearchComponent,
+    CommentComponent
   ],
   imports: [
     BrowserModule,
@@ -38,7 +41,8 @@ import { AppService } from './service/app.service';
   ],
   providers: [
     DataService,
-    AppService
+    AppService,
+    CommentsService
   ],
   bootstrap: [AppComponent]
 })
