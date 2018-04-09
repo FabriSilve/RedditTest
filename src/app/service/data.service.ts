@@ -12,7 +12,7 @@ export class DataService {
 
   private items : Item[];
   private search : string;
-  private focus : Item = null;
+  /*private focus : Item = null;*/
 
 
   constructor( private http : HttpClient) { }
@@ -49,7 +49,7 @@ export class DataService {
     return items;
   }
 
-  public setFocus(item : Item ) : void {
+  /*public setFocus(item : Item ) : void {
     this.focus = item;
   }
 
@@ -59,7 +59,7 @@ export class DataService {
 
   public clearFocus() : void {
     this.focus = null;
-  }
+  }*/
 
   private addressBuilder(s : string) : string {
     if(s === "") s = "sweden";

@@ -14,6 +14,7 @@ import { NoResultComponent } from './no-result/no-result.component';
 import { FooterComponent } from './footer/footer.component';
 import { AppRoutingModule } from './/app-routing.module';
 import { SearchComponent } from './search/search.component';
+import { AppService } from './service/app.service';
 
 
 
@@ -36,7 +37,8 @@ import { SearchComponent } from './search/search.component';
     AppRoutingModule
   ],
   providers: [
-    DataService
+    DataService,
+    AppService
   ],
   bootstrap: [AppComponent]
 })

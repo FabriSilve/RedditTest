@@ -2,6 +2,7 @@ import { Component, OnInit, Input, Output, EventEmitter, ViewChild, ElementRef }
 import { Item } from '../model/models';
 import { DataService } from '../service/data.service';
 import { Router } from '@angular/router';
+import { AppService } from '../service/app.service';
 
 @Component({
   selector: 'item',
@@ -10,7 +11,6 @@ import { Router } from '@angular/router';
 })
 export class ItemComponent implements OnInit {
 
- /* @Output() public onClose : EventEmitter<boolean> = new EventEmitter();*/
   public item : Item;
   public potrait : boolean = false;
 
@@ -18,12 +18,13 @@ export class ItemComponent implements OnInit {
 
   constructor(
     private dataService : DataService,
+    private appService : AppService,
     private router: Router
   ) { 
   }
 
   ngOnInit() {
-    this.item = this.dataService.getFocusItem();
+    this.item = this.appService.getFocusItem();
     if(!this.item) this.router.navigate(['/']);   
   }
 
@@ -31,10 +32,8 @@ export class ItemComponent implements OnInit {
     this.potrait = (this.image.nativeElement.height > this.image.nativeElement.width);
   }
 
-
   public close() {
-    this.dataService.clearFocus();
-    /*this.onClose.emit(true);*/
+    this.appService.clearFocus();
   }
 
   public dateConverter(ms : number) : Date {

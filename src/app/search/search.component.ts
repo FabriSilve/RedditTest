@@ -1,6 +1,7 @@
 import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 import { Item } from '../model/models';
 import { DataService } from '../service/data.service';
+import { AppService } from '../service/app.service';
 
 @Component({
   selector: 'search',
@@ -18,7 +19,8 @@ export class SearchComponent implements OnInit {
   private itemsInPage : number = 10;
   
   constructor(
-    private dataService : DataService
+    private dataService : DataService,
+    private appService : AppService
   ) {}
 
   ngOnInit() {
@@ -74,7 +76,7 @@ export class SearchComponent implements OnInit {
   }
 
   public onFocus(item : Item) {
-    this.dataService.setFocus(item);
+    this.appService.setFocus(item);
   }
 
   public sortByScore() {
