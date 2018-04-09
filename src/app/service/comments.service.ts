@@ -10,7 +10,6 @@ export class CommentsService {
   constructor( private http : HttpClient) { }
 
   public getComments(url : string) : Observable<any> {
-    //console.log(url);
     return this.http.get<any>(url+".json")
     .pipe(
       tap(result => console.log("COMMENTS_GET")),

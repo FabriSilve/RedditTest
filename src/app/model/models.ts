@@ -25,22 +25,4 @@ export interface Item {
     url : string;
 }
 
-/*COMMENTS
-export interface ServerCommentsFull {
-    data : ServerComments;
-}
-
-interface ServerComments {
-    children : ServerComment[];
-}
-
-interface ServerComment {
-    data : Comment;
-}
-
-export interface Comment {
-    body : string;
-    replies : ServerCommentsFull;
-}
-*/
 
