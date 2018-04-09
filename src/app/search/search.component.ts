@@ -24,9 +24,7 @@ export class SearchComponent implements OnInit {
     private appService : AppService
   ) {
     this.firstAccess = this.appService.isFirstAccess();
-    console.log(this.dataService.getNumPage());
     this.itemsInPage = (this.dataService.getNumPage() === 0)? 10 : this.dataService.getNumPage();
-    console.log(this.firstAccess);
   }
 
   ngOnInit() {
