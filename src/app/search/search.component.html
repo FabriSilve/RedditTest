@@ -1,9 +1,9 @@
 
 
-<header (goToBody)="onMove($event)"></header>
+<header (goToBody)="goToSearch()" ></header>
 
 
-<section #body id="body">
+<section #body id="body" [class.underHeader]="firstAccess" [class.top]="!firstAccess">
 
    <search-bar 
        (search)="onSearch($event)" 

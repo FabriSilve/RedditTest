@@ -35,8 +35,8 @@
 }
 
 #body {
+    z-index: 10;
     position: absolute;
-    top: 100%;
     width:100%;
     height: auto;
     min-height: 100%;
@@ -45,6 +45,11 @@
     background-attachment: scroll;
     background-position: top left;
     background-size: auto;
+    transition: all 1s;
+}
+
+.underHeader {
+    top: 100%;
 }
 
 .move-btn {
@@ -62,4 +67,8 @@
 
 .next {
     text-align: left;
+}
+
+.top {
+    top: 0%;
 }

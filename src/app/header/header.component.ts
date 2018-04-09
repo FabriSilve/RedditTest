@@ -1,4 +1,5 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { AppService } from '../service/app.service';
 
 @Component({
   selector: 'header',
@@ -9,7 +10,9 @@ export class HeaderComponent implements OnInit {
 
   @Output() goToBody : EventEmitter<boolean> = new EventEmitter();
 
-  constructor() { }
+ 
+
+  constructor( ) { }
 
   ngOnInit() {
   }

@@ -17,11 +17,15 @@ export class SearchComponent implements OnInit {
 
   private searchInput : string = "";
   private itemsInPage : number = 10;
+  public firstAccess : boolean;
   
   constructor(
     private dataService : DataService,
     private appService : AppService
-  ) {}
+  ) {
+    this.firstAccess = this.appService.isFirstAccess();
+    console.log(this.firstAccess);
+  }
 
   ngOnInit() {
     this.requestData(this.itemsInPage);
@@ -70,8 +74,13 @@ export class SearchComponent implements OnInit {
   }
 
   public onMove(b : boolean) {
-    if(b) {
-      this.body.nativeElement.scrollIntoView({ behavior: 'smooth', block: 'start', inline: 'start' });
+    this.body.nativeElement.scrollIntoView({ behavior: 'smooth', block: 'start', inline: 'start' });
+  }
+
+  public goToSearch() {
+    if(this.firstAccess) {
+      this.appService.doneFirstAccess();
+      this.firstAccess = false;
     }
   }
 

@@ -5,6 +5,7 @@ import { Item } from '../model/models'
 export class AppService {
 
   private focus : Item = null;
+  private firstAccess : boolean = true;
 
   constructor() { }
 
@@ -18,6 +19,14 @@ export class AppService {
 
   public clearFocus() : void {
     this.focus = null;
+  }
+
+  public isFirstAccess() : boolean {
+    return this.firstAccess;
+  }
+
+  public doneFirstAccess() : void {
+    this.firstAccess = false;
   }
 
 }
