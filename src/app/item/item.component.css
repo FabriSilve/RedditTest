@@ -149,7 +149,7 @@ a:hover {
     background:#FFF;
     padding: 1em;
     box-shadow: 3px 7px 8px #777;
-    transform: rotate(-2deg);
+    transform: rotate(2deg);
     border-radius: 3px;
     word-wrap: break-word;
 }

@@ -3,4 +3,9 @@
     padding-left: .5em;
     padding-top: 5px;
     border-left: 2px solid rgb(143, 143, 143);
+    word-wrap: break-word;
+}
+
+.date {
+    color: rgb(160, 160, 160);
 }

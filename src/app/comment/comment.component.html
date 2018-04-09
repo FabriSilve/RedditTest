@@ -1,7 +1,7 @@
 <div class="comment">
   <p>{{comment.data.body}}</p>
   <strong>{{comment.data.author}}</strong> - 
-  <i>{{dateConverter(comment.data.created) | date:'mediumDate' }}</i>
+  <i class="date">{{dateConverter(comment.data.created) | date:'mediumDate' }}</i>
   <div style="margin-left: 2em" *ngIf="replies">
     <div *ngFor="let reply of replies">
       <comment [comment]="reply"></comment>
