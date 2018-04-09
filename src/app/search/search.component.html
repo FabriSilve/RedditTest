@@ -10,6 +10,7 @@
        (itemsNum)="onNumPage($event)"
        (sortScore)="sortByScore()"
        (sortComments)="sortByComments()"
+       (sortRecent)="sortRecent()"
    ></search-bar>
 
    <items *ngIf="items" [items]="items.slice(0, itemsInPage)" (onFocus)="onFocus($event)"></items>

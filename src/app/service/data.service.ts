@@ -50,12 +50,15 @@ export class DataService {
       return [];
     }   
 
-    var items : Array<Item> = new Array<Item>();
+    //todo items locally?
+    this.items  = new Array<Item>();
     data.data.children.forEach(element => {
-      items.push(element.data);
+      this.items.push(element.data);
     });
-    return items;
+    return this.items;
   }
+
+  /*public getOriginalItems() { return this.items; }*/
 
   /*public setFocus(item : Item ) : void {
     this.focus = item;
