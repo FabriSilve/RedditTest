@@ -5,9 +5,9 @@ import { SearchComponent } from './search/search.component';
 import { ItemComponent } from './item/item.component';
 
 const routes: Routes = [
-  { path: 'search', component: SearchComponent},
+  { path: '', component: SearchComponent},
   { path: 'details/:id', component: ItemComponent },
-  { path: '', redirectTo: '/search', pathMatch: 'full' },
+  { path: '', redirectTo: '', pathMatch: 'full' },
   /*{ path: '**', component: PageNotFoundComponent }*/
 ];
 

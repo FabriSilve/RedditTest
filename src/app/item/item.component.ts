@@ -24,7 +24,7 @@ export class ItemComponent implements OnInit {
 
   ngOnInit() {
     this.item = this.dataService.getFocusItem();
-    if(!this.item) this.router.navigate(['/search']);   
+    if(!this.item) this.router.navigate(['/']);   
   }
 
   public imageLoaded() {
