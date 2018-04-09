@@ -14,9 +14,6 @@ export class CommentComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-    console.log(this.comment);
-    /*console.log(this.comment.data.body);
-    console.log(this.comment.data.replies);*/
     if(this.comment.data) {
       if(this.comment.data.replies)
         if(this.comment.data.replies.data)

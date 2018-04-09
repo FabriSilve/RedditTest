@@ -49,7 +49,6 @@ export class ItemComponent implements OnInit {
 
   public getComments() {
     if(this.item == null) return;
-    console.log(this.item);
     this.commentsService.getComments("https://www.reddit.com"+this.item.permalink.slice(0, -1)).subscribe(
       result => {
         this.comments = result[1].data.children;
@@ -57,13 +56,7 @@ export class ItemComponent implements OnInit {
     );
   }
 
-  public pressEsc() {
-    console.log("esc");
-  }
-
-  onEscEvent(event: KeyboardEvent) {
-    console.log(event.keyCode);
-    console.log(event.keyCode === 27);
+   private onEscEvent(event: KeyboardEvent) {
     if(event.keyCode === 27) { //ESC
       this.close();
       this.router.navigate(['/']);
