@@ -11,13 +11,14 @@ import { Item, ServerDataFull } from '../model/models';
 export class DataService {
 
   private items : Item[];
-  private search : string;
+  private search : string = null;
   /*private focus : Item = null;*/
 
 
   constructor( private http : HttpClient) { }
 
   public setSearch(input : string) : void {
+    if(input == "" && this.search != null) return; 
     this.search = this.addressBuilder(input)
   }
 
