@@ -146,12 +146,20 @@ a:hover {
     z-index: 5;
     width:100%;
     height:auto;
+    min-height:10em;
     background:#FFF;
     padding: 1em;
     box-shadow: 3px 7px 8px #777;
     transform: rotate(2deg);
     border-radius: 3px;
     word-wrap: break-word;
+}
+
+.noselftext {
+    color: rgb(170, 170, 170);
+    text-align: center;
+    margin-top: 2.5em;
+    font-size: 140%;
 }
 
 #comments {

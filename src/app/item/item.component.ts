@@ -8,7 +8,10 @@ import { CommentsService } from '../service/comments.service';
 @Component({
   selector: 'item',
   templateUrl: './item.component.html',
-  styleUrls: ['./item.component.css']
+  styleUrls: ['./item.component.css'],
+  host: {
+    '(document:keydown)': 'onEscEvent($event)'
+}
 })
 export class ItemComponent implements OnInit {
 
@@ -57,5 +60,14 @@ export class ItemComponent implements OnInit {
   public pressEsc() {
     console.log("esc");
   }
+
+  onEscEvent(event: KeyboardEvent) {
+    console.log(event.keyCode);
+    console.log(event.keyCode === 27);
+    if(event.keyCode === 27) { //ESC
+      this.close();
+      this.router.navigate(['/']);
+    }
+}
 
 }

@@ -26,11 +26,14 @@
           </div>
       </div>
       <div class="col-sm-6 col-xs-12">
-        <div *ngIf="item.selftext" id="text" class="margin-top">
-          <p>
+        <div id="text" class="margin-top">
+          <p *ngIf="item.selftext">
             <i class="title-text">Text:</i><br/>
             {{item.selftext}}
           </p>
+          <h4 *ngIf="!item.selftext" class="noselftext">
+            no self text
+          </h4>
         </div>
       </div>
     </div>
