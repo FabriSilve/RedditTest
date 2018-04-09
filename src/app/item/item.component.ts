@@ -29,7 +29,7 @@ export class ItemComponent implements OnInit {
   ngOnInit() {
     this.item = this.appService.getFocusItem();
     if(!this.item) this.router.navigate(['/']);
-    this.getComments(); 
+    this.getComments();
   }
 
   public imageLoaded() {
@@ -47,17 +47,15 @@ export class ItemComponent implements OnInit {
   public getComments() {
     if(this.item == null) return;
     console.log(this.item);
-    /*console.log(this.item.url);*/
     this.commentsService.getComments("https://www.reddit.com"+this.item.permalink.slice(0, -1)).subscribe(
       result => {
-        //console.log(result);
         this.comments = result[1].data.children;
-       /* this.comments.forEach(element => {
-          console.log(element.data)
-        });*/
       }
     );
-    
+  }
+
+  public pressEsc() {
+    console.log("esc");
   }
 
 }
