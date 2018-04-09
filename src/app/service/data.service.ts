@@ -10,7 +10,6 @@ import { Item, ServerDataFull } from '../model/models';
 @Injectable()
 export class DataService {
 
-  private items : Item[];
   private search : string = null;
   private numPage : number = 0;
 
@@ -51,11 +50,11 @@ export class DataService {
     }   
 
     //todo items locally?
-    this.items  = new Array<Item>();
+     var items  = new Array<Item>();
     data.data.children.forEach(element => {
-      this.items.push(element.data);
+      items.push(element.data);
     });
-    return this.items;
+    return items;
   }
 
   private addressBuilder(s : string) : string {
