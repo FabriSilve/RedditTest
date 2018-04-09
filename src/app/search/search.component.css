@@ -54,11 +54,15 @@
 
 .move-btn {
     border-radius: 10px;
-    background: rgba(194, 209, 237, 0.9);
+    background: white; /* rgba(194, 209, 237, 0.9);*/
     border: 2px solid white;
     width: auto;
     box-shadow: 5px 5px 6px rgb(60, 60, 60);
     margin-bottom: 2em;
+}
+
+.move-btn a:hover {
+    text-decoration: none;
 }
 
 .prev {

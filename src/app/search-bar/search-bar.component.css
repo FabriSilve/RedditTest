@@ -45,6 +45,12 @@ input#search-bar{
     transition: transform .3s;
 }
 
+@media screen and (max-width: 440px) {
+    .bar-icon {
+        font-size: 90%;
+    }
+}
+
 .bar-icon:hover {
     text-decoration: none;
     transform: scale(1.3);
