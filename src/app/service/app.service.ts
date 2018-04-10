@@ -6,6 +6,7 @@ export class AppService {
 
   private focus : Item = null;
   private firstAccess : boolean = true;
+  private page : number = 1;
 
   constructor() { }
 
@@ -28,5 +29,19 @@ export class AppService {
   public doneFirstAccess() : void {
     this.firstAccess = false;
   }
+
+  public pageNext() {
+    this.page++;
+  }
+
+  public pagePrev() {
+    this.page--;
+  }
+
+  public getPage() : number {
+    return this.page;
+  }
+
+
 
 }

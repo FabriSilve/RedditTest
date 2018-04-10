@@ -27,12 +27,27 @@ export class SearchComponent implements OnInit {
   ) {
     this.firstAccess = this.appService.isFirstAccess();
     this.itemsInPage = (this.dataService.getNumPage() === 0)? 10 : this.dataService.getNumPage();
-    var that = this;
-    setTimeout(function(){ that.goToSearch()}, 4000);
+    this.page = this.appService.getPage();
   }
 
   ngOnInit() {
     this.requestData(this.itemsInPage);
+
+    //TODO KEEP RESEARCH PAGE AFTER FOCUS
+    /*if(this.page > 1) {
+      for(var i = 1; i <= this.page; i++) {
+        console.log("for");
+        var lastId : string = undefined;
+        if(this.items.length > 0)
+          lastId = this.items[this.items.length-1].id;
+        this.requestData(this.itemsInPage, undefined, lastId);
+      }
+    }*/
+  }
+
+  ngDoCheck() {
+    var that = this;
+    setTimeout(function(){ that.goToSearch()}, 4000);
   }
 
   public update(n : number) : void {
@@ -59,6 +74,7 @@ export class SearchComponent implements OnInit {
     this.requestData(this.itemsInPage, undefined, lastId);
     this.onMove(true);
     this.page++;
+    this.appService.pageNext();
   }
   
   public preview() {
@@ -69,6 +85,7 @@ export class SearchComponent implements OnInit {
     this.requestData(this.itemsInPage, firstId, undefined);
     this.onMove(true);
     this.page--;
+    this.appService.pagePrev();
   }
 
   public onSearch(s : string) {
