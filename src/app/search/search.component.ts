@@ -102,7 +102,7 @@ export class SearchComponent implements OnInit {
     var that = this;
     setTimeout(function(){ 
       that.goToSearch();
-    }, 4000);
+    }, 3000);
   }
 
   private requestData(n : number, idPrev? : string, idNext? : string ) : void {

@@ -1,4 +1,4 @@
-import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { Component, Output, EventEmitter } from '@angular/core';
 import { AppService } from '../service/app.service';
 
 @Component({
@@ -6,16 +6,11 @@ import { AppService } from '../service/app.service';
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.css']
 })
-export class HeaderComponent implements OnInit {
+export class HeaderComponent {
 
   @Output() goToBody : EventEmitter<boolean> = new EventEmitter();
 
- 
-
   constructor( ) { }
-
-  ngOnInit() {
-  }
 
   public onClick() {
     this.goToBody.emit(true);
