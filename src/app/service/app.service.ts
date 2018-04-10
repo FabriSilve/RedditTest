@@ -10,38 +10,20 @@ export class AppService {
 
   constructor() { }
 
-  public setFocus(item : Item ) : void {
-    this.focus = item;
-  }
+  public setFocus(item : Item ) : void { this.focus = item; }
 
-  public getFocusItem() : Item {
-    return this.focus;
-  }
+  public getFocusItem() : Item { return this.focus; }
 
-  public clearFocus() : void {
-    this.focus = null;
-  }
+  public clearFocus() : void { this.focus = null; }
 
-  public isFirstAccess() : boolean {
-    return this.firstAccess;
-  }
+  public isFirstAccess() : boolean { return this.firstAccess; }
 
-  public doneFirstAccess() : void {
-    this.firstAccess = false;
-  }
+  public doneFirstAccess() : void { this.firstAccess = false; }
 
-  public pageNext() {
-    this.page++;
-  }
+  public pageNext() { this.page++; }
 
-  public pagePrev() {
-    this.page--;
-  }
+  public pagePrev() { this.page--; }
 
-  public getPage() : number {
-    return this.page;
-  }
-
-
+  public getPage() : number { return this.page; }
 
 }
