@@ -9,9 +9,7 @@ import { CommentsService } from '../service/comments.service';
   selector: 'item',
   templateUrl: './item.component.html',
   styleUrls: ['./item.component.css'],
-  host: {
-    '(document:keydown)': 'onEscEvent($event)'
-}
+  host: { '(document:keydown)': 'onEscEvent($event)' }
 })
 export class ItemComponent implements OnInit {
 
@@ -26,8 +24,7 @@ export class ItemComponent implements OnInit {
     private appService : AppService,
     private commentsService : CommentsService,
     private router: Router
-  ) {
-  }
+  ) { }
 
   ngOnInit() {
     this.item = this.appService.getFocusItem();
@@ -37,10 +34,6 @@ export class ItemComponent implements OnInit {
 
   public imageLoaded() {
     this.potrait = (this.image.nativeElement.height > this.image.nativeElement.width);
-  }
-
-  public close() {
-    this.appService.clearFocus();
   }
 
   public dateConverter(ms : number) : Date {
@@ -54,6 +47,10 @@ export class ItemComponent implements OnInit {
         this.comments = result[1].data.children;
       }
     );
+  }
+
+  public close() {
+    this.appService.clearFocus();
   }
 
    private onEscEvent(event: KeyboardEvent) {

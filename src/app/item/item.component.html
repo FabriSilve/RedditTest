@@ -16,7 +16,7 @@
             <h4>{{item.title}}</h4>
             <div class="footer">
               <div class="sign">
-                Posted by <strong class="author">{{ item.author }}</strong> in <i class="created">{{ dateConverter(item.created) | date:'mediumDate' }}</i>
+                Posted by <strong class="author">{{ item.author }}</strong> on <i class="created">{{ dateConverter(item.created) | date:'mediumDate' }}</i>
               </div>
               <div class="values left">
                 <i class="fas fa-trophy"></i> {{item.score}}
@@ -43,7 +43,5 @@
          <comment [comment]="comment"></comment>
        </div>
      </div>
-     <div>
   </div>
 </div>
-<footer></footer>
