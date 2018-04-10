@@ -10,6 +10,7 @@ export class CommentComponent implements OnInit {
   @Input() public comment : any;
 
   public replies : any[] = null;
+  public showReplies : boolean = false;
 
   constructor() { }
 

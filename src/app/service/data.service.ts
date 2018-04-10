@@ -6,13 +6,11 @@ import { of } from 'rxjs/observable/of';
 
 import { Item, ServerDataFull } from '../model/models';
 
-
 @Injectable()
 export class DataService {
 
   private search : string = null;
   private numPage : number = 0;
-
 
   constructor( private http : HttpClient) { }
 
@@ -21,9 +19,7 @@ export class DataService {
     this.search = this.addressBuilder(input)
   }
 
-  public setNumPage(n : number) {
-    this.numPage = n;
-  }
+  public setNumPage(n : number) { this.numPage = n; }
 
   public getNumPage() { return this.numPage; }
 
@@ -44,13 +40,9 @@ export class DataService {
   }
 
   public buildData(data : ServerDataFull) : Item[] {
-    if(data == null) {
-      console.error("data null");
-      return [];
-    }   
+    if(data == null) return [];    
 
-    //todo items locally?
-     var items  = new Array<Item>();
+    var items  = new Array<Item>();
     data.data.children.forEach(element => {
       items.push(element.data);
     });

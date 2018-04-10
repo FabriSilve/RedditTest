@@ -16,11 +16,12 @@
             <h4>{{item.title}}</h4>
             <div class="footer">
               <div class="sign">
-                Posted by <strong class="author">{{ item.author }}</strong> in <i class="created">{{ dateConverter(item.created) | date:'mediumDate' }}</i>
+                  <a href="https://www.reddit.com{{item.permalink}}" target="_blank"><i class="fas fa-link"></i></a><i class="tab"></i>
+                  Posted by <strong class="author">{{ item.author }}</strong> on <i class="created">{{ dateConverter(item.created) | date:'mediumDate' }}</i>
               </div>
               <div class="values left">
                 <i class="fas fa-trophy"></i> {{item.score}}
-                <i class="tab"></i><i class="fas fa-comments"></i>{{item.num_comments}}    
+                <i class="tab"></i><i class="fas fa-comments"></i> {{item.num_comments}}
               </div>
             </div>
           </div>
@@ -43,7 +44,5 @@
          <comment [comment]="comment"></comment>
        </div>
      </div>
-     <div>
   </div>
 </div>
-<footer></footer>

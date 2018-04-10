@@ -14,11 +14,10 @@ export class SearchComponent implements OnInit {
   
   public items : Item[] = [];
   public loaded : boolean = false;
+  public firstAccess : boolean;
 
   private searchInput : string = "";
   private itemsInPage : number = 10;
-  public firstAccess : boolean;
-
   private page : number = 1;
   
   constructor(
@@ -32,40 +31,11 @@ export class SearchComponent implements OnInit {
 
   ngOnInit() {
     this.requestData(this.itemsInPage);
-
-    //TODO KEEP RESEARCH PAGE AFTER FOCUS
-    /*if(this.page > 1) {
-      for(var i = 1; i <= this.page; i++) {
-        console.log("for");
-        var lastId : string = undefined;
-        if(this.items.length > 0)
-          lastId = this.items[this.items.length-1].id;
-        this.requestData(this.itemsInPage, undefined, lastId);
-      }
-    }*/
   }
 
-  ngDoCheck() {
-    var that = this;
-    setTimeout(function(){ that.goToSearch()}, 4000);
-  }
+  //PUBLIC
 
-  public update(n : number) : void {
-    this.itemsInPage = n;
-    this.loaded = false;
-    this.requestData(n);
-  }
-
-  private requestData(n : number, idPrev? : string, idNext? : string ) : void {
-    this.dataService.setSearch(this.searchInput);
-    this.dataService.getData(n, idPrev, idNext).subscribe(
-      result => {
-        if(result != null) this.items = this.dataService.buildData(result);
-        this.loaded = true;
-      }
-    );
-  }
-
+  // - INPUT HANDLER
   public next() {
     if(this.itemsInPage > this.items.length) return;
     var lastId : string = undefined;
@@ -124,6 +94,26 @@ export class SearchComponent implements OnInit {
 
   public sortRecent() {
     this.items.sort((a, b) => b.created - a.created);
+  }
+
+  //PRIVATE
+
+  private slideDown() {
+    var that = this;
+    setTimeout(function(){ 
+      that.goToSearch();
+    }, 3000);
+  }
+
+  private requestData(n : number, idPrev? : string, idNext? : string ) : void {
+    this.dataService.setSearch(this.searchInput);
+    this.dataService.getData(n, idPrev, idNext).subscribe(
+      result => {
+        if(result != null) this.items = this.dataService.buildData(result);
+        this.loaded = true;
+        this.slideDown();
+      }
+    );
   }
 
   

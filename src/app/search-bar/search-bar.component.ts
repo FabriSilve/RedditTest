@@ -1,11 +1,11 @@
-import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { Component, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'search-bar',
   templateUrl: './search-bar.component.html',
   styleUrls: ['./search-bar.component.css']
 })
-export class SearchBarComponent implements OnInit {
+export class SearchBarComponent {
 
   public searchInput : string = "";
   public itemsInPage : number = 10;
@@ -17,9 +17,6 @@ export class SearchBarComponent implements OnInit {
   @Output() sortRecent : EventEmitter<boolean> = new EventEmitter();
 
   constructor() { }
-
-  ngOnInit() {
-  }
 
   public onSearch() {
     this.search.emit(this.searchInput.replace(/\s/g, "-"));

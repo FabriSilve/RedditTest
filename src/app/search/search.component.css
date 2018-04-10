@@ -1,3 +1,4 @@
+/*LOADER FOG*/
 
 .fog {
     display: block;
@@ -9,7 +10,7 @@
     bottom: 0;
     padding-top: 40%;
     padding-left: 40%;
-    background: rgba(255, 255, 255, 0.95)
+    background: rgba(201, 201, 201, 0.95)
 }
 
 .loader {
@@ -17,7 +18,7 @@
     top: 50%;
     bottom: 50%;
     left: 46%;
-    border: 16px solid #f3f3f3; 
+    border: 16px solid #ffffff; 
     border-top: 16px solid #ff7b00; 
     border-radius: 50%;
     width: 100px;
@@ -34,6 +35,8 @@
     display:none;
 }
 
+/* MAIN AREA */
+
 #body {
     z-index: 10;
     position: absolute;
@@ -48,18 +51,9 @@
     transition: all 1s;
 }
 
-/*
-@media screen and (max-width: 1450) {
-    #body {
-        background: url('assets/img/section-bg2.jpg');
-    }
+.top {
+    top: 0%;
 }
-
-@media screen and (min-width: 1450) {
-    #body {
-        background: url('assets/img/section-bg-big.jpg');
-    }
-}*/
 
 .underHeader {
     top: 100%;
@@ -86,6 +80,3 @@
     text-align: left;
 }
 
-.top {
-    top: 0%;
-}

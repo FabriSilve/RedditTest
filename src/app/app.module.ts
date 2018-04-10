@@ -11,7 +11,6 @@ import { ItemComponent } from './item/item.component';
 import { HeaderComponent } from './header/header.component';
 import { SearchBarComponent } from './search-bar/search-bar.component';
 import { NoResultComponent } from './no-result/no-result.component';
-import { FooterComponent } from './footer/footer.component';
 import { AppRoutingModule } from './/app-routing.module';
 import { SearchComponent } from './search/search.component';
 import { AppService } from './service/app.service';
@@ -28,7 +27,6 @@ import { CommentComponent } from './comment/comment.component';
     HeaderComponent,
     SearchBarComponent,
     NoResultComponent,
-    FooterComponent,
     SearchComponent,
     CommentComponent
   ],

@@ -25,16 +25,16 @@ input#search-bar{
     font-size: 110%;
     border: 1px solid #D0CFCE;
     outline: none;
-    padding-right: 7%;
-    padding-left: 2%;
+    padding-right: 2em;
+    padding-left: 0.5em;
     border-radius: 15px;
 }
 
 .search-icon{
     position: relative;
     float: right;
-    top: -32px;
-    right: 2%;
+    top: -1.5em;
+    right: 0.7em;
 }
 
 .bar-icon {
