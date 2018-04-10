@@ -12,7 +12,7 @@
                 {{ (item.title.length>42)? ((item.title | slice:0:42)+'...'):(item.title) }}
               </h4>
               <div class="sign">
-                <strong class="author">{{ item.author }}</strong> in <i class="created">{{ dateConverter(item.created) | date:'mediumDate' }}</i>
+                <strong class="author">{{ item.author }}</strong> on <i class="created">{{ dateConverter(item.created) | date:'mediumDate' }}</i>
               </div>
               <div class="values left">
                 <i class="fas fa-trophy"></i> {{item.score}}
@@ -21,7 +21,6 @@
             </div>
           </a>
       </div>
-     
     </li>
   </ul>
 </div>

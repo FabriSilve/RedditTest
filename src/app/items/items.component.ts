@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, EventEmitter, Output } from '@angular/core';
+import { Component, Input, EventEmitter, Output } from '@angular/core';
 import { Item } from '../model/models';
 
 @Component({
@@ -6,7 +6,7 @@ import { Item } from '../model/models';
   templateUrl: './items.component.html',
   styleUrls: ['./items.component.css']
 })
-export class ItemsComponent implements OnInit {
+export class ItemsComponent {
 
   @Input() public items : Item[];
   @Output() public onFocus : EventEmitter<Item> = new EventEmitter();
@@ -15,19 +15,8 @@ export class ItemsComponent implements OnInit {
 
   constructor() { }
 
-  ngOnInit() { }
-
   public dateConverter(ms : number) : Date {
     return new Date(ms*1000);
-  }
-
-
-  public mouseIn(id : string) : any {
-    this.currentId = id;
-  }
-
-  public mouseOut(id : string) : any {
-    this.currentId = "";
   }
 
   public focusItem(item : Item) {

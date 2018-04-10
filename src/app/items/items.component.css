@@ -24,8 +24,7 @@
     position: relative;
 }
 
-
-
+/*IEM*/
 .thumbnail-image {
     width:auto;
     max-width: 250px;
@@ -49,8 +48,7 @@
 
     .footer {
         max-width: 180px;
-    }
-  
+    } 
 }
 
 @media screen and (max-width: 325px) {
@@ -62,8 +60,7 @@
     .footer {
         max-width: 160px;
     }
-  
-  }
+}
 
 .polaroid-image h4 {
     font-size: 100%;
@@ -102,8 +99,6 @@
     padding-left: 1em;
 }
 
-
-
 .focus {
     z-index: 15;
     position: fixed;
@@ -114,25 +109,25 @@
 
 /**POLAROID*/
 .polaroid-image a
- {
-     background: white;
-     /*display: inline;*/
-     float: left;
-     margin: 0 15px 30px;
-     padding: 10px;
-     text-align: center;
-     text-decoration: none;
-     -webkit-box-shadow: 0 4px 6px rgba(0, 0, 0, .5);
-     -moz-box-shadow: 0 4px 6px rgba(0,0,0,.5);
-     box-shadow: 0 4px 6px rgba(0,0,0,.5);
-     -webkit-transition: all .15s linear;
-     -moz-transition: all .15s linear;
-     transition: all .15s linear;
-     z-index:0;
-     position:relative;   
- }
+{
+    background: white;
+    /*display: inline;*/
+    float: left;
+    margin: 0 15px 30px;
+    padding: 10px;
+    text-align: center;
+    text-decoration: none;
+    -webkit-box-shadow: 0 4px 6px rgba(0, 0, 0, .5);
+    -moz-box-shadow: 0 4px 6px rgba(0,0,0,.5);
+    box-shadow: 0 4px 6px rgba(0,0,0,.5);
+    -webkit-transition: all .15s linear;
+    -moz-transition: all .15s linear;
+    transition: all .15s linear;
+    z-index:0;
+    position:relative;   
+}
 
- @media screen and (max-width: 400px) {
+@media screen and (max-width: 400px) {
     .polaroid-image a {
         margin: 0 10px 25px;
     }
@@ -140,30 +135,17 @@
     .og-grid li {
         margin: 0.5em;
     }
-  
 }
  
- .polaroid-image .footer {
-     padding-top: 10px;
-     padding-bottom: 0;
- }
- 
- /*.polaroid-image a:after {
-     color: #333;
-     font-size: 20px;
-     content: attr(title);
-     position: relative;
-     top:15px;
- }*/
- 
- .polaroid-image img { 
-     display: block; 
-    /* width: inherit;*/ 
- }
+.polaroid-image .footer {
+    padding-top: 10px;
+    padding-bottom: 0;
+}
 
- /*.polaroid-images {
-     margin-top: 1em;
- }*/
+ 
+.polaroid-image img { 
+    display: block; 
+}
 
 .polaroid-images li:nth-child(1n)
 {
@@ -192,15 +174,15 @@
 .polaroid-images a:hover{        
     -webkit-transform: scale(1.2); 
     -moz-transform: scale(1.2);
-        transform: scale(1.2);
+    transform: scale(1.2);
     -webkit-box-shadow: 0 10px 20px rgba(0, 0, 0, .7);
     -moz-box-shadow: 0 10px 20px rgba(0,0,0,.7);
-        box-shadow: 0 10px 20px rgba(0,0,0,.7);
+    box-shadow: 0 10px 20px rgba(0,0,0,.7);
 }
 
 .polaroid-images li:hover {
     -webkit-transform: rotate(0deg); 
     -moz-transform: rotate(0deg);
-        transform: rotate(0deg);
+    transform: rotate(0deg);
     z-index: 50px;
 }
