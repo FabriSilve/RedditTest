@@ -5,11 +5,8 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './no-result.component.html',
   styleUrls: ['./no-result.component.css']
 })
-export class NoResultComponent implements OnInit {
+export class NoResultComponent {
 
   constructor() { }
-
-  ngOnInit() {
-  }
 
 }
