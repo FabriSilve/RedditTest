@@ -19,7 +19,12 @@ export class ItemsComponent {
     return new Date(s*1000);
   }
 
-  public focusItem(item : Item) {
-    //this.onFocus.emit(item);
+  public checkUrl(url : string) {
+    if(url == null) return "assets/img/reddit.jpg";
+    if(url.match(/.*(self|default)$/) != null) {
+      return "assets/img/reddit.jpg";
+    } else {
+      return url;
+    }
   }
 }

@@ -105,7 +105,15 @@ export class SearchComponent implements OnInit {
     this.dataService.setSearch(this.searchInput);
     this.dataService.getData(n, idPrev, idNext).subscribe(
       result => {
-        if(result != null) this.items = this.dataService.buildData(result);
+        if(result == null) this.items = [];
+        else  {
+          this.items = this.dataService.buildData(result);
+          if(this.items.length > 0) {
+            if(this.items[0].author == null) {
+              this.items = [];
+            }
+          }
+        }
         this.loaded = true;
       }
     );

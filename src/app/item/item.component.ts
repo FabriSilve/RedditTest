@@ -47,6 +47,7 @@ export class ItemComponent implements OnInit {
 
   public getComments() {
     if(this.item == null) return;
+    if(this.item.permalink == null) return;
     this.commentsService.getComments("https://www.reddit.com"+this.item.permalink.slice(0, -1)).subscribe(
       result => {
         this.comments = result[1].data.children;
@@ -61,6 +62,15 @@ export class ItemComponent implements OnInit {
 
   public checkURL(url : string) {
     this.imageUrlError = !(url.match(/\.(jpeg|jpg|gif|png)$/) != null);
+  }
+
+  public checkUrlSelfOrDefault(url : string) {
+    if(url == null) return "assets/img/reddit.jpg";
+    if(url.match(/.*(self|default)$/) != null) {
+      return "assets/img/reddit.jpg";
+    } else {
+      return url;
+    }
   }
 
   private onEscEvent(event: KeyboardEvent) {

@@ -19,7 +19,7 @@
         <div #polaroid class="polaroid-image" [ngClass]="{'potrait': potrait}">
 
             <img #image class="clickable" *ngIf="!imageUrlError" [src]="item.url" (onError)="onImageError()" (load)="imageLoaded()" (click)="showFocus = true"/> 
-            <img #image *ngIf="imageUrlError" [src]="item.thumbnail" onError="this.src = 'assets/img/reddit.jpg'" (load)="imageLoaded()"/>
+            <img #image *ngIf="imageUrlError" [src]="checkUrlSelfOrDefault(item.thumbnail)" onError="this.src = 'assets/img/reddit.jpg'" (load)="imageLoaded()"/>
 
 
             <h4>{{item.title}}</h4>

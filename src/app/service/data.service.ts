@@ -35,7 +35,7 @@ export class DataService {
     }
     return this.http.get<ServerDataFull>(address)
     .pipe(
-      tap(result => console.log("DATA_GET")),
+      //tap(result => console.log("DATA_GET")),
       catchError(this.handleError<ServerDataFull>('DATA_GET', null))
     );
   }
@@ -61,8 +61,9 @@ export class DataService {
 
   private handleError<T> (operation = 'operation', result?: T) {
     return (error: any): Observable<T> => {
-      console.error(operation);
-      console.error(error);
+      console.debug("NO DATA");
+      /*console.error(operation);
+      console.error(error);*/
       return of(result as T);
     };
   }
