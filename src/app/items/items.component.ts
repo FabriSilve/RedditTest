@@ -20,6 +20,6 @@ export class ItemsComponent {
   }
 
   public focusItem(item : Item) {
-    this.onFocus.emit(item);
+    //this.onFocus.emit(item);
   }
 }

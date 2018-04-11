@@ -1,7 +1,7 @@
 import { Component, OnInit, Input, Output, EventEmitter, ViewChild, ElementRef } from '@angular/core';
 import { Item } from '../model/models';
 import { DataService } from '../service/data.service';
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 import { AppService } from '../service/app.service';
 import { CommentsService } from '../service/comments.service';
 
@@ -23,13 +23,15 @@ export class ItemComponent implements OnInit {
 
   constructor(
     private dataService : DataService,
-    private appService : AppService,
     private commentsService : CommentsService,
-    private router: Router
-  ) { }
+    private router: Router,
+    private route: ActivatedRoute,
+  ) {
+    var id : string = this.route.snapshot.paramMap.get('id');
+    this.item = this.dataService.getItem(id);
+   }
 
   ngOnInit() {
-    this.item = this.appService.getFocusItem();
     if(!this.item) this.router.navigate(['/']);
     this.getComments();
     this.checkURL(this.item.url);
@@ -52,10 +54,6 @@ export class ItemComponent implements OnInit {
     );
   }
 
-  public close() {
-    this.appService.clearFocus();
-  }
-
   public onImageError() {
     console.log("error");
     this.imageUrlError = true
@@ -70,7 +68,6 @@ export class ItemComponent implements OnInit {
       if(this.showFocus) {
         this.showFocus = false;
       } else {
-        this.close();
         this.router.navigate(['/']);
       }
     }

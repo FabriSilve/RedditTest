@@ -9,6 +9,7 @@ import { Item, ServerDataFull } from '../model/models';
 @Injectable()
 export class DataService {
 
+  private items : Item[];
   private search : string = null;
   private numPage : number = 0;
 
@@ -42,11 +43,15 @@ export class DataService {
   public buildData(data : ServerDataFull) : Item[] {
     if(data == null) return [];    
 
-    var items  = new Array<Item>();
+    this.items  = new Array<Item>();
     data.data.children.forEach(element => {
-      items.push(element.data);
+      this.items.push(element.data);
     });
-    return items;
+    return this.items;
+  }
+
+  public getItem(id : string ) : Item {
+    return this.items.filter( item => item.id === id)[0];
   }
 
   private addressBuilder(s : string) : string {

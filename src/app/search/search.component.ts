@@ -80,10 +80,6 @@ export class SearchComponent implements OnInit {
     }
   }
 
-  public onFocus(item : Item) {
-    this.appService.setFocus(item);
-  }
-
   public sortByScore() {
     this.items.sort((a, b) => b.score - a.score);
   }
@@ -111,7 +107,6 @@ export class SearchComponent implements OnInit {
       result => {
         if(result != null) this.items = this.dataService.buildData(result);
         this.loaded = true;
-        //this.slideDown();
       }
     );
   }
