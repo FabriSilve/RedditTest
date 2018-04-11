@@ -67,8 +67,12 @@ export class ItemComponent implements OnInit {
 
   private onEscEvent(event: KeyboardEvent) {
     if(event.keyCode === 27) { //ESC
-      this.close();
-      this.router.navigate(['/']);
+      if(this.showFocus) {
+        this.showFocus = false;
+      } else {
+        this.close();
+        this.router.navigate(['/']);
+      }
     }
   }
 
