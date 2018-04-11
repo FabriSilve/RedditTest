@@ -43,7 +43,7 @@
     width:100%;
     height: auto;
     min-height: 100%;
-    background: url('assets/img/section-bg2.jpg');
+    background: url('assets/img/mosaic-bg.jpeg');
     background-repeat: repeat;
     background-attachment: scroll;
     background-position: top left;
@@ -66,6 +66,7 @@
     width: auto;
     box-shadow: 5px 5px 6px rgb(60, 60, 60);
     margin-bottom: 2em;
+    cursor: pointer;
 }
 
 .move-btn a:hover {

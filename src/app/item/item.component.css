@@ -2,7 +2,7 @@
     width:100%;
     height: auto;
     min-height: 100%;
-    background: url('assets/img/section-bg2.jpg');
+    background: url('assets/img/mosaic-bg.jpeg');
     background-repeat: repeat;
     background-attachment: scroll;
     background-position: top left;
@@ -66,12 +66,12 @@ a:hover {
     width: 60%;
 }
 
-.polaroid-image:hover {
+/*.polaroid-image:hover {
     z-index: 100;
     position: relative;
     transform: scale(1.2);
     transform-origin: left center;
-}
+}*/
 
  @media screen and (max-width: 700px) {
     .polaroid-image {
