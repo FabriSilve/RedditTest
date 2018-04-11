@@ -17,6 +17,7 @@ export class ItemComponent implements OnInit {
   public potrait : boolean = false;
   public comments : any;
   public imageUrlError : boolean = false;
+  public showFocus : boolean = false;
 
   @ViewChild('image') image: ElementRef;
 

@@ -1,4 +1,9 @@
 <div #element id="element" *ngIf="item">
+
+  <div class="fullscreen" *ngIf="!imageUrlErro && showFocus" (click)="showFocus = false">
+      <img [src]="item.url" class="focused" />
+  </div>
+
   <div class="container focused">
     <div class="row">
       <div class="close-bar">
@@ -13,7 +18,7 @@
       <div class="col-sm-6 col-xs-12">
         <div #polaroid class="polaroid-image" [ngClass]="{'potrait': potrait}">
 
-            <img #image *ngIf="!imageUrlError" [src]="item.url" (onError)="onImageError()" (load)="imageLoaded()"/> 
+            <img #image *ngIf="!imageUrlError" [src]="item.url" (onError)="onImageError()" (load)="imageLoaded()" (click)="showFocus = true"/> 
             <img #image *ngIf="imageUrlError" [src]="item.thumbnail" onError="this.src = 'assets/img/reddit.jpg'" (load)="imageLoaded()"/>
 
 
@@ -51,6 +56,3 @@
   </div>
 </div>
 
-<!--<div class="back">
-  <img #focus *ngIf="imageFocus" [src]="item.url" (onError)="onImageError()" (load)="imageLoaded()"/>
-</div>-->

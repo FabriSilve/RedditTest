@@ -66,14 +66,7 @@ a:hover {
     width: 60%;
 }
 
-/*.polaroid-image:hover {
-    z-index: 100;
-    position: relative;
-    transform: scale(1.2);
-    transform-origin: left center;
-}*/
-
- @media screen and (max-width: 700px) {
+@media screen and (max-width: 700px) {
     .polaroid-image {
         width: 70%;
     } 
@@ -166,3 +159,23 @@ a:hover {
     box-shadow: 3px 7px 8px #777;
     border-radius: 3px; 
 }
+
+/*FOCUS*/
+
+.fullscreen {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    z-index: 200;
+    padding: 2%;
+    background: rgba(0, 0, 0, .7);
+    text-align: center;
+}
+
+.focused {
+    width: auto;
+    height: auto;
+    max-width: 100%;
+    max-height: 100%;
+}
+
