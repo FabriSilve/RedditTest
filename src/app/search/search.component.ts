@@ -111,7 +111,7 @@ export class SearchComponent implements OnInit {
       result => {
         if(result != null) this.items = this.dataService.buildData(result);
         this.loaded = true;
-        this.slideDown();
+        //this.slideDown();
       }
     );
   }
