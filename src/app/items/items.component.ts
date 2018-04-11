@@ -15,8 +15,8 @@ export class ItemsComponent {
 
   constructor() { }
 
-  public dateConverter(ms : number) : Date {
-    return new Date(ms*1000);
+  public dateConverter(s : number) : Date {
+    return new Date(s*1000);
   }
 
   public focusItem(item : Item) {
