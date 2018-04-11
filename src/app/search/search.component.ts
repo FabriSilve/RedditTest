@@ -74,8 +74,8 @@ export class SearchComponent implements OnInit {
   }
 
   public goToSearch() {
+    this.appService.doneFirstAccess();
     if(this.firstAccess) {
-      this.appService.doneFirstAccess();
       this.firstAccess = false;
     }
   }
