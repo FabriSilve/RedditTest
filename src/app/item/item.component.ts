@@ -16,6 +16,7 @@ export class ItemComponent implements OnInit {
   public item : Item;
   public potrait : boolean = false;
   public comments : any;
+  public imageUrlError : boolean = false;
 
   @ViewChild('image') image: ElementRef;
 
@@ -30,6 +31,7 @@ export class ItemComponent implements OnInit {
     this.item = this.appService.getFocusItem();
     if(!this.item) this.router.navigate(['/']);
     this.getComments();
+    this.checkURL(this.item.url);
   }
 
   public imageLoaded() {
@@ -53,11 +55,20 @@ export class ItemComponent implements OnInit {
     this.appService.clearFocus();
   }
 
-   private onEscEvent(event: KeyboardEvent) {
+  public onImageError() {
+    console.log("error");
+    this.imageUrlError = true
+  }
+
+  public checkURL(url : string) {
+    this.imageUrlError = !(url.match(/\.(jpeg|jpg|gif|png)$/) != null);
+  }
+
+  private onEscEvent(event: KeyboardEvent) {
     if(event.keyCode === 27) { //ESC
       this.close();
       this.router.navigate(['/']);
     }
-}
+  }
 
 }

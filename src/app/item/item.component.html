@@ -12,7 +12,11 @@
     <div class="row margin-top">
       <div class="col-sm-6 col-xs-12">
         <div #polaroid class="polaroid-image" [ngClass]="{'potrait': potrait}">
-            <img #image [src]="item.url" [alt]="item.title" onError="this.src='assets/img/reddit.jpg'" (load)="imageLoaded()"/>
+
+            <img #image *ngIf="!imageUrlError" [src]="item.url" (onError)="onImageError()" (load)="imageLoaded()"/> 
+            <img #image *ngIf="imageUrlError" [src]="item.thumbnail" onError="this.src = 'assets/img/reddit.jpg'" (load)="imageLoaded()"/>
+
+
             <h4>{{item.title}}</h4>
             <div class="footer">
               <div class="sign">
@@ -46,3 +50,7 @@
      </div>
   </div>
 </div>
+
+<!--<div class="back">
+  <img #focus *ngIf="imageFocus" [src]="item.url" (onError)="onImageError()" (load)="imageLoaded()"/>
+</div>-->
