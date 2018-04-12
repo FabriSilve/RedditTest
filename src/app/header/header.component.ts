@@ -4,7 +4,8 @@ import { AppService } from '../service/app.service';
 @Component({
   selector: 'header',
   templateUrl: './header.component.html',
-  styleUrls: ['./header.component.css']
+  styleUrls: ['./header.component.css'],
+  host: { '(document:keydown)': 'onEnterEvent($event)' }
 })
 export class HeaderComponent {
 
@@ -14,6 +15,12 @@ export class HeaderComponent {
 
   public onClick() {
     this.goToBody.emit(true);
+  }
+
+  private onEnterEvent(event: KeyboardEvent) {
+    if(event.keyCode === 13) { //ENTER
+     this.onClick();
+    }
   }
 
 }

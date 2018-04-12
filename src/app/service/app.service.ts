@@ -6,6 +6,7 @@ export class AppService {
 
   private firstAccess : boolean = true;
   private page : number = 1;
+  private lastId : string = "";
 
   constructor() { }
 
@@ -13,10 +14,12 @@ export class AppService {
 
   public doneFirstAccess() : void { this.firstAccess = false; }
 
-  public pageNext() { this.page++; }
-
-  public pagePrev() { this.page--; }
+  public setPage(n : number) { this.page = n; }
 
   public getPage() : number { return this.page; }
+
+  public setLasttId(id : string) { this.lastId = id; }
+
+  public getLasttId() : string { return this.lastId; }
 
 }

@@ -26,12 +26,15 @@ export class SearchComponent implements OnInit {
   ) {
     this.firstAccess = this.appService.isFirstAccess();
     this.appService.doneFirstAccess();
+
     this.itemsInPage = (this.dataService.getNumPage() === 0)? 10 : this.dataService.getNumPage();
+
     this.page = this.appService.getPage();
+
+    this.requestData(this.itemsInPage);
   }
 
   ngOnInit() {
-    this.requestData(this.itemsInPage);
   }
 
   //PUBLIC
@@ -43,9 +46,9 @@ export class SearchComponent implements OnInit {
     if(this.items.length > 0)
       lastId = this.items[this.items.length-1].id;
     this.requestData(this.itemsInPage, undefined, lastId);
+
     this.onMove(true);
-    this.page++;
-    this.appService.pageNext();
+    this.appService.setPage(++this.page);
   }
   
   public preview() {
@@ -55,14 +58,15 @@ export class SearchComponent implements OnInit {
       firstId = this.items[0].id;
     this.requestData(this.itemsInPage, firstId, undefined);
     this.onMove(true);
-    this.page--;
-    this.appService.pagePrev();
+    this.appService.setPage(--this.page);
   }
 
   public onSearch(s : string) {
     this.searchInput = s;
     this.requestData(this.itemsInPage);
     this.page = 1;
+    this.appService.setPage(1);
+
   }
 
   public onNumPage(n : number) {
@@ -104,7 +108,7 @@ export class SearchComponent implements OnInit {
 
   private requestData(n : number, idPrev? : string, idNext? : string ) : void {
     this.dataService.setSearch(this.searchInput);
-    this.dataService.getData(n, idPrev, idNext).subscribe(
+    this.dataService.getData(n, idPrev, idNext, this.appService.getLasttId()).subscribe(
       result => {
         if(result == null) this.items = [];
         else  {
@@ -112,6 +116,8 @@ export class SearchComponent implements OnInit {
           if(this.items.length > 0) {
             if(this.items[0].author == null) {
               this.items = [];
+            } else {
+              this.appService.setLasttId(this.items[this.items.length-1].id);
             }
           }
         }

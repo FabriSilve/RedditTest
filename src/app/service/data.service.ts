@@ -24,7 +24,7 @@ export class DataService {
 
   public getNumPage() { return this.numPage; }
 
-  public getData(n : number, idPrev? : string, idNext? : string ) : Observable<ServerDataFull> {
+  public getData(n : number, idPrev? : string, idNext? : string, lastId? : string ) : Observable<ServerDataFull> {
     this.numPage = n;
     var address : string = this.search+"?limit="+n;;
     if(idPrev) {
@@ -32,6 +32,9 @@ export class DataService {
     }
     if(idNext) {
       address += "&after=t3_"+idNext;
+    }
+    if(!idNext && !idPrev && lastId) {
+      address += "&before=t3_"+lastId;
     }
     return this.http.get<ServerDataFull>(address)
     .pipe(
@@ -62,8 +65,6 @@ export class DataService {
   private handleError<T> (operation = 'operation', result?: T) {
     return (error: any): Observable<T> => {
       console.debug("NO DATA");
-      /*console.error(operation);
-      console.error(error);*/
       return of(result as T);
     };
   }
