@@ -6,7 +6,8 @@ import { AppService } from '../service/app.service';
 @Component({
   selector: 'search',
   templateUrl: './search.component.html',
-  styleUrls: ['./search.component.css']
+  styleUrls: ['./search.component.css'],
+  host: { '(document:keydown)': 'onKeyEvent($event)' }
 })
 export class SearchComponent implements OnInit {
 
@@ -108,6 +109,13 @@ export class SearchComponent implements OnInit {
     setTimeout(function(){ 
       that.goToSearch();
     }, 3000);
+  }
+
+  private onKeyEvent(event: KeyboardEvent) {
+    if(event.keyCode === 37) // <-
+      this.preview();
+    else if(event.keyCode === 39) // ->
+      this.next();
   }
 
   private requestData(n : number, idPrev? : string, idNext? : string ) : void {

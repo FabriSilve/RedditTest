@@ -18,9 +18,9 @@ export class AppService {
 
   public getPage() : number { return this.page; }
 
-  public setLasttId(id : string) { console.log("set with"+id); this.lastId.push(id); }
+  public setLasttId(id : string) { this.lastId.push(id); }
 
-  public removeLastId() { console.log(this.lastId.pop()); }
+  public removeLastId() { this.lastId.pop(); }
 
   public getLasttId() : string { return (this.lastId.length > 0)? this.lastId[this.lastId.length-1] : this.lastId[0]; }
 
