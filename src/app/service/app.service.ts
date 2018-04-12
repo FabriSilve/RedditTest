@@ -6,7 +6,7 @@ export class AppService {
 
   private firstAccess : boolean = true;
   private page : number = 1;
-  private lastId : string = "";
+  private lastId : Array<string> = new Array<string>();
 
   constructor() { }
 
@@ -18,8 +18,10 @@ export class AppService {
 
   public getPage() : number { return this.page; }
 
-  public setLasttId(id : string) { this.lastId = id; }
+  public setLasttId(id : string) { console.log("set with"+id); this.lastId.push(id); }
 
-  public getLasttId() : string { return this.lastId; }
+  public removeLastId() { console.log(this.lastId.pop()); }
+
+  public getLasttId() : string { return (this.lastId.length > 0)? this.lastId[this.lastId.length-1] : this.lastId[0]; }
 
 }

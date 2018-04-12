@@ -12,15 +12,12 @@ export class CommentsService {
   public getComments(url : string) : Observable<any> {
     return this.http.get<any>(url+".json")
     .pipe(
-      tap(result => console.log("COMMENTS_GET")),
       catchError(this.handleError<any>('COMMENTS_GET', null))
     );
   }
 
   private handleError<T> (operation = 'operation', result?: T) {
     return (error: any): Observable<T> => {
-      console.error(operation);
-      console.error(error);
       return of(result as T);
     };
   }

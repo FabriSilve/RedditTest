@@ -26,15 +26,15 @@ export class DataService {
 
   public getData(n : number, idPrev? : string, idNext? : string, lastId? : string ) : Observable<ServerDataFull> {
     this.numPage = n;
-    var address : string = this.search+"?limit="+n;;
+    var address : string = this.search+"?limit="+n;
     if(idPrev) {
       address += "&before=t3_"+idPrev;
     }
     if(idNext) {
       address += "&after=t3_"+idNext;
     }
-    if(!idNext && !idPrev && lastId) {
-      address += "&before=t3_"+lastId;
+    if(idNext == null && idPrev == null && lastId) {
+      address += "&after=t3_"+lastId;
     }
     return this.http.get<ServerDataFull>(address)
     .pipe(

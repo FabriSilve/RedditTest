@@ -43,8 +43,10 @@ export class SearchComponent implements OnInit {
   public next() {
     if(this.itemsInPage > this.items.length) return;
     var lastId : string = undefined;
-    if(this.items.length > 0)
+    if(this.items.length > 0) {
       lastId = this.items[this.items.length-1].id;
+      this.appService.setLasttId(lastId);
+    }
     this.requestData(this.itemsInPage, undefined, lastId);
 
     this.onMove(true);
@@ -53,12 +55,14 @@ export class SearchComponent implements OnInit {
   
   public preview() {
     if(this.page == 1) return;
+    this.appService.removeLastId();
     var firstId : string = undefined;
     if(this.items.length > 0)
       firstId = this.items[0].id;
     this.requestData(this.itemsInPage, firstId, undefined);
     this.onMove(true);
     this.appService.setPage(--this.page);
+ 
   }
 
   public onSearch(s : string) {
@@ -116,8 +120,6 @@ export class SearchComponent implements OnInit {
           if(this.items.length > 0) {
             if(this.items[0].author == null) {
               this.items = [];
-            } else {
-              this.appService.setLasttId(this.items[this.items.length-1].id);
             }
           }
         }
