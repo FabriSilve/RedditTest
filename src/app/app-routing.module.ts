@@ -3,12 +3,13 @@ import { RouterModule, Routes } from '@angular/router';
 
 import { SearchComponent } from './search/search.component';
 import { ItemComponent } from './item/item.component';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 
 const routes: Routes = [
-  { path: '', component: SearchComponent},
+  { path: 'search', component: SearchComponent},
   { path: 'details/:id', component: ItemComponent },
-  { path: '', redirectTo: '', pathMatch: 'full' },
-  /*{ path: '**', component: PageNotFoundComponent }*/
+  { path: '', redirectTo: 'search', pathMatch: 'full' },
+  { path: '**', component: PageNotFoundComponent }
 ];
 
 @NgModule({

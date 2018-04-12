@@ -16,6 +16,7 @@ import { SearchComponent } from './search/search.component';
 import { AppService } from './service/app.service';
 import { CommentsService } from './service/comments.service';
 import { CommentComponent } from './comment/comment.component';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 
 
 
@@ -28,7 +29,8 @@ import { CommentComponent } from './comment/comment.component';
     SearchBarComponent,
     NoResultComponent,
     SearchComponent,
-    CommentComponent
+    CommentComponent,
+    PageNotFoundComponent
   ],
   imports: [
     BrowserModule,
