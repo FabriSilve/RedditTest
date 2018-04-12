@@ -73,12 +73,16 @@ export class ItemComponent implements OnInit {
     }
   }
 
+  public goBack() : void {
+    this.router.navigate(['/']);
+  }
+
   private onEscEvent(event: KeyboardEvent) {
     if(event.keyCode === 27) { //ESC
       if(this.showFocus) {
         this.showFocus = false;
       } else {
-        this.router.navigate(['/']);
+        this.goBack();
       }
     }
   }
