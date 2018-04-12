@@ -25,6 +25,7 @@ export class SearchComponent implements OnInit {
     private appService : AppService
   ) {
     this.firstAccess = this.appService.isFirstAccess();
+    this.appService.doneFirstAccess();
     this.itemsInPage = (this.dataService.getNumPage() === 0)? 10 : this.dataService.getNumPage();
     this.page = this.appService.getPage();
   }
